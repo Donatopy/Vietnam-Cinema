@@ -95,9 +95,17 @@ def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
     else:
         movies = df_long['Movie Name'].unique()
 
+    # Handle empty movie list
+    if len(movies) == 0:
+        st.error("No movies match the selected filter. Please choose a different filter option.")
+        return
+
     # Initialize the selected movie index in session state
     if 'selected_index' not in st.session_state:
         st.session_state.selected_index = 0
+
+    # Ensure the index is within bounds
+    st.session_state.selected_index = min(st.session_state.selected_index, len(movies) - 1)
 
     # Navigation buttons to move through movies
     col1, col2, col3 = st.columns([1, 5, 1])
@@ -112,10 +120,6 @@ def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
 
     # Dropdown to select a movie
     selected_movie = st.selectbox('Select a movie to analyze:', movies, index=st.session_state.selected_index)
-
-    # Ensure the selected movie matches the index
-    if selected_movie != movies[st.session_state.selected_index]:
-        st.session_state.selected_index = list(movies).index(selected_movie)
 
     # Filter data for the selected movie
     df_movie = df_long[df_long['Movie Name'] == selected_movie]
@@ -141,6 +145,7 @@ def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
     first_weekend_revenue, second_weekend_revenue = calculate_weekend_revenue(df_movie)
     st.write(f"Total revenue in the first weekend: {first_weekend_revenue / 1e9:,.2f} billion VND")
     st.write(f"Total revenue in the second weekend: {second_weekend_revenue / 1e9:,.2f} billion VND")
+
 
 # Run the app
 if __name__ == "__main__":
