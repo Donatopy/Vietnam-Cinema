@@ -17,7 +17,7 @@ def main():
 
     with tab1:
         st.header("Insight 1")
-        st.subheader("x")
+        st.subheader("Number of movies per year in each revenue range (0-5 billion, 10-20 billion, more than 100 billion etc.). VN movies have an average budget of 15 billion VND. Using a standard formula of 2.5x revenue to break even I want to see roughly how many are actually profitable from year to year.")
         plot_data_insight1(df1, release_dates)  # Pasar ambos DataFrames
 
     with tab2:
