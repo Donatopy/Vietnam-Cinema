@@ -41,6 +41,9 @@ def preprocess_data(df, release_dates):
 def plot_revenue_trends(df_filtered, selected_movie, release_date, highlight_weekends=False):
     fig, ax = plt.subplots(figsize=(10, 6))
     
+    # Asegúrate de que los datos estén ordenados por fecha
+    df_filtered.sort_index(inplace=True)
+    
     sns.lineplot(data=df_filtered, x=df_filtered.index, y='Revenue', ax=ax, marker='o')
     
     # Sombrear los fines de semana si está activado
@@ -60,6 +63,7 @@ def plot_revenue_trends(df_filtered, selected_movie, release_date, highlight_wee
     
     ax.legend()
     st.pyplot(fig)
+
 
 def calculate_revenue_periods(df_movie):
     premiere_date = df_movie['Release Date'].iloc[0]
@@ -82,12 +86,6 @@ def calculate_revenue_periods(df_movie):
                                   (df_movie.index < premiere_date + pd.Timedelta(days=14)), 'Revenue'].sum()
 
     return first_week_revenue, second_week_revenue, first_weekend, second_weekend
-
-import pandas as pd
-import streamlit as st
-
-import pandas as pd
-import streamlit as st
 
 def analyze_profitable_movies(df_long, threshold=45e9):
     profitable_movies = df_long.groupby('Movie Name')['Revenue'].sum()
@@ -112,18 +110,18 @@ def analyze_profitable_movies(df_long, threshold=45e9):
         # Tabla 1: Ingresos semanales
         week_results.append({
             'Film': movie,
-            'Week 1 Revenue (Billion VND)': f"{first_week_revenue / 1e9:.2f}",
-            'Week 2 Revenue (Billion VND)': f"{second_week_revenue / 1e9:.2f}",
-            'Change (%)': f"{week_drop_percentage:.2f}%" if week_drop_percentage is not None else None,
+            'Week 1 Revenue (Billion VND)': first_week_revenue / 1e9,  # Mantener como número
+            'Week 2 Revenue (Billion VND)': second_week_revenue / 1e9,  # Mantener como número
+            'Change (%)': week_drop_percentage,
             'Total Revenue (Billion VND)': total_revenue
         })
 
         # Tabla 2: Ingresos de fines de semana
         weekend_results.append({
             'Film': movie,
-            'Weekend 1 Revenue (Billion VND)': f"{first_weekend / 1e9:.2f}",
-            'Weekend 2 Revenue (Billion VND)': f"{second_weekend / 1e9:.2f}",
-            'Change (%)': f"{weekend_drop_percentage:.2f}%" if weekend_drop_percentage is not None else None,
+            'Weekend 1 Revenue (Billion VND)': first_weekend / 1e9,  # Mantener como número
+            'Weekend 2 Revenue (Billion VND)': second_weekend / 1e9,  # Mantener como número
+            'Change (%)': weekend_drop_percentage,
             'Total Revenue (Billion VND)': total_revenue
         })
 
@@ -135,7 +133,7 @@ def analyze_profitable_movies(df_long, threshold=45e9):
     def color_change(val):
         try:
             # Convertir a float para la comparación
-            value = float(val.replace('%', ''))
+            value = float(val)
             if value < 0:
                 return 'color: red'
             elif value > 0:
@@ -147,11 +145,20 @@ def analyze_profitable_movies(df_long, threshold=45e9):
 
     # Mostrar las tablas en Streamlit
     st.write("**Top Films by Weekly Drop**")
-    st.write(week_results_df.style.applymap(color_change, subset=['Change (%)']))
+    st.write(week_results_df.style.format({
+        'Week 1 Revenue (Billion VND)': '{:.2f}',
+        'Week 2 Revenue (Billion VND)': '{:.2f}',
+        'Change (%)': '{:.2f}',
+        'Total Revenue (Billion VND)': '{:.2f}'
+    }).applymap(color_change, subset=['Change (%)']))
 
     st.write("**Top Films by Weekend Drop**")
-    st.write(weekend_results_df.style.applymap(color_change, subset=['Change (%)']))
-
+    st.write(weekend_results_df.style.format({
+        'Weekend 1 Revenue (Billion VND)': '{:.2f}',
+        'Weekend 2 Revenue (Billion VND)': '{:.2f}',
+        'Change (%)': '{:.2f}',
+        'Total Revenue (Billion VND)': '{:.2f}'
+    }).applymap(color_change, subset=['Change (%)']))
 
 
 
