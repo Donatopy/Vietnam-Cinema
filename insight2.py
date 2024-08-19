@@ -83,13 +83,19 @@ def calculate_revenue_periods(df_movie):
 
     return first_week_revenue, second_week_revenue, first_weekend, second_weekend
 
+import pandas as pd
+import streamlit as st
+
+import pandas as pd
+import streamlit as st
+
 def analyze_profitable_movies(df_long, threshold=45e9):
-    # Filtrar películas rentables
     profitable_movies = df_long.groupby('Movie Name')['Revenue'].sum()
     profitable_movies = profitable_movies[profitable_movies >= threshold]
 
-    # Analizar la tendencia de ingresos
-    results = []
+    week_results = []
+    weekend_results = []
+
     for movie in profitable_movies.index:
         df_movie = df_long[df_long['Movie Name'] == movie]
         df_movie.set_index('Date', inplace=True)
@@ -99,17 +105,54 @@ def analyze_profitable_movies(df_long, threshold=45e9):
 
         total_revenue = profitable_movies[movie] / 1e9  # Convertir a miles de millones
 
-        results.append({
-            'Movie Name': movie,
-            'First Weekend Revenue (Billion VND)': first_weekend / 1e9,
-            'Second Weekend Revenue (Billion VND)': second_weekend / 1e9,
-            'First Week Revenue (Billion VND)': first_week_revenue / 1e9,
-            'Second Week Revenue (Billion VND)': second_week_revenue / 1e9,
+        # Calcular porcentajes de caída
+        week_drop_percentage = ((second_week_revenue - first_week_revenue) / first_week_revenue * 100) if first_week_revenue > 0 else None
+        weekend_drop_percentage = ((second_weekend - first_weekend) / first_weekend * 100) if first_weekend > 0 else None
+
+        # Tabla 1: Ingresos semanales
+        week_results.append({
+            'Film': movie,
+            'Week 1 Revenue (Billion VND)': f"{first_week_revenue / 1e9:.2f}",
+            'Week 2 Revenue (Billion VND)': f"{second_week_revenue / 1e9:.2f}",
+            'Change (%)': f"{week_drop_percentage:.2f}%" if week_drop_percentage is not None else None,
             'Total Revenue (Billion VND)': total_revenue
         })
 
-    results_df = pd.DataFrame(results).round(2)
-    st.write(results_df)
+        # Tabla 2: Ingresos de fines de semana
+        weekend_results.append({
+            'Film': movie,
+            'Weekend 1 Revenue (Billion VND)': f"{first_weekend / 1e9:.2f}",
+            'Weekend 2 Revenue (Billion VND)': f"{second_weekend / 1e9:.2f}",
+            'Change (%)': f"{weekend_drop_percentage:.2f}%" if weekend_drop_percentage is not None else None,
+            'Total Revenue (Billion VND)': total_revenue
+        })
+
+    # Crear DataFrames para las dos tablas
+    week_results_df = pd.DataFrame(week_results).sort_values(by='Change (%)', ascending=True).reset_index(drop=True)
+    weekend_results_df = pd.DataFrame(weekend_results).sort_values(by='Change (%)', ascending=True).reset_index(drop=True)
+
+    # Función para aplicar colores
+    def color_change(val):
+        try:
+            # Convertir a float para la comparación
+            value = float(val.replace('%', ''))
+            if value < 0:
+                return 'color: red'
+            elif value > 0:
+                return 'color: green'
+            else:
+                return ''
+        except:
+            return ''
+
+    # Mostrar las tablas en Streamlit
+    st.write("**Top Films by Weekly Drop**")
+    st.write(week_results_df.style.applymap(color_change, subset=['Change (%)']))
+
+    st.write("**Top Films by Weekend Drop**")
+    st.write(weekend_results_df.style.applymap(color_change, subset=['Change (%)']))
+
+
 
 
 def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
