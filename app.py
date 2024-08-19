@@ -1,6 +1,8 @@
 import streamlit as st
 from insight1 import load_and_process_data_insight1, plot_data_insight1
 from insight2 import insight2
+from insight3 import insight3
+from insight4 import insight4
 import pandas as pd
 
 def main():
@@ -13,7 +15,7 @@ def main():
     release_dates['Year'] = release_dates['Release Date'].dt.year
 
     # Configurar pestañas
-    tab1, tab2, tab3 = st.tabs(["Insight 1", "Insight 2", "Insight 3"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Insight 1", "Insight 2", "Insight 3", "Insight 4"])
 
     with tab1:
         st.header("Insight 1")
@@ -26,7 +28,11 @@ def main():
         
     with tab3:
         st.header("Insight 3")
-        st.write("Insight 3 not implemented yet.")
+        insight3()
+        
+    with tab4:
+        st.header("Insight 4")
+        insight4()
 
 if __name__ == "__main__":
     main()

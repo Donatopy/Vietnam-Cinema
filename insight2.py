@@ -5,10 +5,10 @@ import seaborn as sns
 
 def load_data(file_path, release_dates_path):
     try:
-        # Load the movie revenue data
+        # Cargar los datos de ingresos de películas
         df = pd.read_excel(file_path)
         
-        # Load the release dates with proper error handling
+        # Cargar las fechas de estreno con el manejo de errores adecuado
         release_dates = pd.read_csv(release_dates_path, dayfirst=True)
     except Exception as e:
         st.error(f"Error loading files: {e}")
@@ -17,62 +17,117 @@ def load_data(file_path, release_dates_path):
     return df, release_dates
 
 def preprocess_data(df, release_dates):
-    # Transpose the DataFrame so dates are rows and movies are columns
+    # Transponer el DataFrame para que las fechas sean filas y las películas columnas
     df_transposed = df.set_index('Movie Name').T
     df_transposed.columns.name = None
     df_transposed.reset_index(inplace=True)
     df_transposed.rename(columns={'index': 'Date'}, inplace=True)
 
-    # Convert 'Date' to datetime format
+    # Convertir 'Date' a formato datetime
     df_transposed['Date'] = pd.to_datetime(df_transposed['Date'], format='%Y-%m-%d')
 
-    # Transform the DataFrame to long format for analysis
+    # Transformar el DataFrame a formato largo para el análisis
     df_long = df_transposed.melt(id_vars=['Date'], var_name='Movie Name', value_name='Revenue')
 
-    # Convert 'Revenue' to numeric, handling errors by coercing invalid values to NaN
+    # Convertir 'Revenue' a numérico, manejando errores convirtiendo valores inválidos a NaN
     df_long['Revenue'] = pd.to_numeric(df_long['Revenue'], errors='coerce')
 
-    # Merge with release dates data
+    # Fusionar con los datos de fechas de estreno
     df_long = df_long.merge(release_dates, on='Movie Name', how='left')
     df_long['Release Date'] = pd.to_datetime(df_long['Release Date'], dayfirst=True)
 
     return df_long
 
-def plot_revenue_trends(df_filtered, selected_movie):
+def plot_revenue_trends(df_filtered, selected_movie, release_date, highlight_weekends=False):
     fig, ax = plt.subplots(figsize=(10, 6))
+    
     sns.lineplot(data=df_filtered, x=df_filtered.index, y='Revenue', ax=ax, marker='o')
+    
+    # Sombrear los fines de semana si está activado
+    if highlight_weekends:
+        weekends = df_filtered[df_filtered.index.weekday >= 5].index
+        for weekend in weekends:
+            ax.axvspan(weekend, weekend + pd.Timedelta(days=1), color='grey', alpha=0.3)
+    
+    # Añadir la línea roja de puntos en la fecha de estreno
+    ax.axvline(release_date, color='red', linestyle='--', linewidth=1.5, label='Release Date')
+    
+    # Formato del eje x
     ax.set_title(f'Revenue of {selected_movie} from 7 days before to 21 days after release date')
     ax.set_xlabel('Date')
     ax.set_ylabel('Revenue (Billion VND)')
+    ax.xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter('%d/%m/%y'))
+    
+    ax.legend()
     st.pyplot(fig)
 
-def calculate_weekend_revenue(df_movie):
+def calculate_revenue_periods(df_movie):
     premiere_date = df_movie['Release Date'].iloc[0]
-    df_movie = df_movie[df_movie.index >= premiere_date]
-    first_weekend_end = premiere_date + pd.Timedelta(days=6)
-    second_weekend_end = premiere_date + pd.Timedelta(days=13)
-    
-    first_weekend_revenue = df_movie.loc[df_movie.index <= first_weekend_end, 'Revenue'].sum()
-    second_weekend_revenue = df_movie.loc[(df_movie.index > first_weekend_end) & (df_movie.index <= second_weekend_end), 'Revenue'].sum()
 
-    return first_weekend_revenue, second_weekend_revenue
+    # Primeros 7 días
+    first_week_revenue = df_movie.loc[(df_movie.index >= premiere_date) & 
+                                      (df_movie.index < premiere_date + pd.Timedelta(days=7)), 'Revenue'].sum()
+    
+    # Siguientes 7 días (Día 7 al Día 13)
+    second_week_revenue = df_movie.loc[(df_movie.index >= premiere_date + pd.Timedelta(days=7)) & 
+                                       (df_movie.index < premiere_date + pd.Timedelta(days=14)), 'Revenue'].sum()
+
+    # Primer fin de semana
+    first_weekend = df_movie.loc[(df_movie.index.weekday >= 5) & 
+                                 (df_movie.index < premiere_date + pd.Timedelta(days=7)), 'Revenue'].sum()
+
+    # Segundo fin de semana
+    second_weekend = df_movie.loc[(df_movie.index.weekday >= 5) & 
+                                  (df_movie.index >= premiere_date + pd.Timedelta(days=7)) & 
+                                  (df_movie.index < premiere_date + pd.Timedelta(days=14)), 'Revenue'].sum()
+
+    return first_week_revenue, second_week_revenue, first_weekend, second_weekend
+
+def analyze_profitable_movies(df_long, threshold=45e9):
+    # Filtrar películas rentables
+    profitable_movies = df_long.groupby('Movie Name')['Revenue'].sum()
+    profitable_movies = profitable_movies[profitable_movies >= threshold]
+
+    # Analizar la tendencia de ingresos
+    results = []
+    for movie in profitable_movies.index:
+        df_movie = df_long[df_long['Movie Name'] == movie]
+        df_movie.set_index('Date', inplace=True)
+        df_movie.sort_index(inplace=True)
+
+        first_week_revenue, second_week_revenue, first_weekend, second_weekend = calculate_revenue_periods(df_movie)
+
+        total_revenue = profitable_movies[movie] / 1e9  # Convertir a miles de millones
+
+        results.append({
+            'Movie Name': movie,
+            'First Weekend Revenue (Billion VND)': first_weekend / 1e9,
+            'Second Weekend Revenue (Billion VND)': second_weekend / 1e9,
+            'First Week Revenue (Billion VND)': first_week_revenue / 1e9,
+            'Second Week Revenue (Billion VND)': second_week_revenue / 1e9,
+            'Total Revenue (Billion VND)': total_revenue
+        })
+
+    results_df = pd.DataFrame(results).round(2)
+    st.write(results_df)
+
 
 def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
-    # Load and preprocess data
+    # Cargar y preprocesar datos
     df, release_dates = load_data(file_path, release_dates_path)
     if df is None or release_dates is None:
         return
     
     df_long = preprocess_data(df, release_dates)
 
-    # Calculate total revenue for each movie
+    # Calcular el ingreso total para cada película
     movie_revenue = df_long.groupby('Movie Name')['Revenue'].sum()
 
-    # Initialize button states in session state
+    # Inicializar el estado del botón en session state
     if 'filter_option' not in st.session_state:
         st.session_state.filter_option = 'all'
     
-    # Buttons to filter movies
+    # Botones para filtrar películas
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -87,7 +142,7 @@ def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
         if st.button('Show All Movies'):
             st.session_state.filter_option = 'all'
 
-    # Filter movies based on the selected option
+    # Filtrar películas según la opción seleccionada
     if st.session_state.filter_option == 'less_than_45b':
         movies = movie_revenue[movie_revenue < 45e9].index
     elif st.session_state.filter_option == 'greater_than_45b':
@@ -95,19 +150,19 @@ def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
     else:
         movies = df_long['Movie Name'].unique()
 
-    # Handle empty movie list
+    # Manejar lista vacía de películas
     if len(movies) == 0:
         st.error("No movies match the selected filter. Please choose a different filter option.")
         return
 
-    # Initialize the selected movie index in session state
+    # Inicializar el índice de la película seleccionada en session state
     if 'selected_index' not in st.session_state:
         st.session_state.selected_index = 0
 
-    # Ensure the index is within bounds
+    # Asegurarse de que el índice esté dentro de los límites
     st.session_state.selected_index = min(st.session_state.selected_index, len(movies) - 1)
 
-    # Navigation buttons to move through movies
+    # Botones de navegación para moverse entre películas
     col1, col2, col3 = st.columns([1, 5, 1])
 
     with col1:
@@ -118,35 +173,43 @@ def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
         if st.button('Next Movie'):
             st.session_state.selected_index = (st.session_state.selected_index + 1) % len(movies)
 
-    # Dropdown to select a movie
+    # Dropdown para seleccionar una película
     selected_movie = st.selectbox('Select a movie to analyze:', movies, index=st.session_state.selected_index)
 
-    # Filter data for the selected movie
+    # Filtrar datos para la película seleccionada
     df_movie = df_long[df_long['Movie Name'] == selected_movie]
     df_movie = df_movie[['Date', 'Revenue', 'Release Date']]
     df_movie.set_index('Date', inplace=True)
     df_movie.sort_index(inplace=True)
 
-    # Get the release date for the selected movie
+    # Obtener la fecha de estreno de la película seleccionada
     release_date = df_movie['Release Date'].iloc[0]
-    st.write(f"Release date for {selected_movie}: {release_date.strftime('%d/%m/%Y')}")
+    st.write(f"Release date for {selected_movie}: {release_date.strftime('%d/%m/%y')}")
 
-    # Define the date range centered around the release date
+    # Definir el rango de fechas centrado alrededor de la fecha de estreno
     start_date = release_date - pd.Timedelta(days=7)
     end_date = release_date + pd.Timedelta(days=21)
 
-    # Filter data within the date range
+    # Filtrar datos dentro del rango de fechas
     df_filtered = df_movie[(df_movie.index >= start_date) & (df_movie.index <= end_date)]
 
-    # Plot the revenue trends
-    plot_revenue_trends(df_filtered, selected_movie)
+    # Añadir botón para sombrear fines de semana
+    highlight_weekends = st.checkbox("Highlight Weekends", value=True)
 
-    # Calculate and display weekend revenue
-    first_weekend_revenue, second_weekend_revenue = calculate_weekend_revenue(df_movie)
-    st.write(f"Total revenue in the first weekend: {first_weekend_revenue / 1e9:,.2f} billion VND")
-    st.write(f"Total revenue in the second weekend: {second_weekend_revenue / 1e9:,.2f} billion VND")
+    # Graficar las tendencias de ingresos con la línea roja de puntos para la fecha de estreno
+    plot_revenue_trends(df_filtered, selected_movie, release_date, highlight_weekends)
 
+    # Calcular y mostrar los ingresos para los primeros 7 días, los siguientes 7 días y los dos fines de semana
+    first_week_revenue, second_week_revenue, first_weekend, second_weekend = calculate_revenue_periods(df_movie)
 
-# Run the app
+    st.write(f"Total revenue in the first week after release: {first_week_revenue / 1e9:,.2f} billion VND")
+    st.write(f"Total revenue in the second week after release: {second_week_revenue / 1e9:,.2f} billion VND")
+    st.write(f"Total revenue in the first weekend after release: {first_weekend / 1e9:,.2f} billion VND")
+    st.write(f"Total revenue in the second weekend after release: {second_weekend / 1e9:,.2f} billion VND")
+
+    # Analizar películas rentables
+    st.write("**Profitable Movies Analysis**")
+    analyze_profitable_movies(df_long)
+
 if __name__ == "__main__":
     insight2()
