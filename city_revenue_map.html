@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b6fb5fd73f9d114fc1ec2231635ee34e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b6fb5fd73f9d114fc1ec2231635ee34e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b6fb5fd73f9d114fc1ec2231635ee34e = L.map(
+                "map_b6fb5fd73f9d114fc1ec2231635ee34e",
+                {
+                    center: [14.0583, 108.2772],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_93a8c1530ec0f083fde756afebe531dc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_93a8c1530ec0f083fde756afebe531dc.addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+            var circle_marker_61f28496744493598a1d78a8ed48de0e = L.circleMarker(
+                [10.3452, 107.0835],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0890931225870575, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_832d5330c16d2f97e004d1131aed086a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cd7008ff8d8fc02fdd2482490d893e56 = $(`<div id="html_cd7008ff8d8fc02fdd2482490d893e56" style="width: 100.0%; height: 100.0%;">Bà Rịa - Vũng Tàu: $16,427,797,000 (0.28% of Total Revenue)</div>`)[0];
+                popup_832d5330c16d2f97e004d1131aed086a.setContent(html_cd7008ff8d8fc02fdd2482490d893e56);
+            
+        
+
+        circle_marker_61f28496744493598a1d78a8ed48de0e.bindPopup(popup_832d5330c16d2f97e004d1131aed086a)
+        ;
+
+        
+    
+    
+            var circle_marker_8864e73737a963c5484a49786b7bb9d5 = L.circleMarker(
+                [11.4973, 107.503],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1062311405599985, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_bfecbd3faf63386adb6ae8eba5c53b23 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2898d848a41aa63664499c8eb83808d2 = $(`<div id="html_2898d848a41aa63664499c8eb83808d2" style="width: 100.0%; height: 100.0%;">Bảo Lộc: $19,587,860,000 (0.33% of Total Revenue)</div>`)[0];
+                popup_bfecbd3faf63386adb6ae8eba5c53b23.setContent(html_2898d848a41aa63664499c8eb83808d2);
+            
+        
+
+        circle_marker_8864e73737a963c5484a49786b7bb9d5.bindPopup(popup_bfecbd3faf63386adb6ae8eba5c53b23)
+        ;
+
+        
+    
+    
+            var circle_marker_710a925bc5d9111d120c3bfd483579fb = L.circleMarker(
+                [21.2855, 106.1974],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0567412029782703, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_5c861410b4e391ee92d24b7dec19a6ac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_62ca1e2e8a0c7d47162e9c870689b3a9 = $(`<div id="html_62ca1e2e8a0c7d47162e9c870689b3a9" style="width: 100.0%; height: 100.0%;">Bắc Giang: $10,462,457,000 (0.18% of Total Revenue)</div>`)[0];
+                popup_5c861410b4e391ee92d24b7dec19a6ac.setContent(html_62ca1e2e8a0c7d47162e9c870689b3a9);
+            
+        
+
+        circle_marker_710a925bc5d9111d120c3bfd483579fb.bindPopup(popup_5c861410b4e391ee92d24b7dec19a6ac)
+        ;
+
+        
+    
+    
+            var circle_marker_7a87beb48be68e3c09a920d672702e37 = L.circleMarker(
+                [21.1844, 106.0391],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2733362998187787, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_fbefd859aa8289ae45fe72caf81bd6b2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d09fd7abe5aef6c8943f266078fdd1a = $(`<div id="html_2d09fd7abe5aef6c8943f266078fdd1a" style="width: 100.0%; height: 100.0%;">Bắc Ninh: $50,400,223,000 (0.85% of Total Revenue)</div>`)[0];
+                popup_fbefd859aa8289ae45fe72caf81bd6b2.setContent(html_2d09fd7abe5aef6c8943f266078fdd1a);
+            
+        
+
+        circle_marker_7a87beb48be68e3c09a920d672702e37.bindPopup(popup_fbefd859aa8289ae45fe72caf81bd6b2)
+        ;
+
+        
+    
+    
+            var circle_marker_e34016e176bebf05b6cf2173a43d68de = L.circleMarker(
+                [8.5718, 105.147],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0917296944299717, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_381a75ef5e925c4c8a88cf0ad8aa8544 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3feda97103beda30d67778bd8b0c27cf = $(`<div id="html_3feda97103beda30d67778bd8b0c27cf" style="width: 100.0%; height: 100.0%;">Cà Mau: $16,913,952,000 (0.29% of Total Revenue)</div>`)[0];
+                popup_381a75ef5e925c4c8a88cf0ad8aa8544.setContent(html_3feda97103beda30d67778bd8b0c27cf);
+            
+        
+
+        circle_marker_e34016e176bebf05b6cf2173a43d68de.bindPopup(popup_381a75ef5e925c4c8a88cf0ad8aa8544)
+        ;
+
+        
+    
+    
+            var circle_marker_e66c41b99c49c3cd8379aee0bbf82767 = L.circleMarker(
+                [10.0452, 105.7461],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.7647241349623473, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_2017df072655d22b57953f568e21dbb9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_499a0b977d120eab374d63aa91c43e99 = $(`<div id="html_499a0b977d120eab374d63aa91c43e99" style="width: 100.0%; height: 100.0%;">Cần Thơ: $141,006,763,321 (2.39% of Total Revenue)</div>`)[0];
+                popup_2017df072655d22b57953f568e21dbb9.setContent(html_499a0b977d120eab374d63aa91c43e99);
+            
+        
+
+        circle_marker_e66c41b99c49c3cd8379aee0bbf82767.bindPopup(popup_2017df072655d22b57953f568e21dbb9)
+        ;
+
+        
+    
+    
+            var circle_marker_a13a7865b0c8059a8955d981b5135ad7 = L.circleMarker(
+                [27.1287, 107.133],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.322133891547768, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_b95cb1609c73db669f24377d6358e58e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6a2212a95c735d7b5ff7313ec44c1ad5 = $(`<div id="html_6a2212a95c735d7b5ff7313ec44c1ad5" style="width: 100.0%; height: 100.0%;">Cẩm Phả: $59,397,965,000 (1.01% of Total Revenue)</div>`)[0];
+                popup_b95cb1609c73db669f24377d6358e58e.setContent(html_6a2212a95c735d7b5ff7313ec44c1ad5);
+            
+        
+
+        circle_marker_a13a7865b0c8059a8955d981b5135ad7.bindPopup(popup_b95cb1609c73db669f24377d6358e58e)
+        ;
+
+        
+    
+    
+            var circle_marker_87f4bd00f0b0ea694a45b13300ed2012 = L.circleMarker(
+                [10.8945, 106.7806],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2256514096870386, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_c7370c77268aac33b904cd181d16d05d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f280310541a4362bef36d4d18a9b731c = $(`<div id="html_f280310541a4362bef36d4d18a9b731c" style="width: 100.0%; height: 100.0%;">Dĩ An: $41,607,651,000 (0.71% of Total Revenue)</div>`)[0];
+                popup_c7370c77268aac33b904cd181d16d05d.setContent(html_f280310541a4362bef36d4d18a9b731c);
+            
+        
+
+        circle_marker_87f4bd00f0b0ea694a45b13300ed2012.bindPopup(popup_c7370c77268aac33b904cd181d16d05d)
+        ;
+
+        
+    
+    
+            var circle_marker_fd49c72ec1fe200de066ab120d3602a7 = L.circleMarker(
+                [20.8449, 106.685],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1136548944992146, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_4bad255b23187d689e23eec37e45a306 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e4e84684aa134f0ae560086b052a4df = $(`<div id="html_8e4e84684aa134f0ae560086b052a4df" style="width: 100.0%; height: 100.0%;">Haiphong: $20,956,719,000 (0.36% of Total Revenue)</div>`)[0];
+                popup_4bad255b23187d689e23eec37e45a306.setContent(html_8e4e84684aa134f0ae560086b052a4df);
+            
+        
+
+        circle_marker_fd49c72ec1fe200de066ab120d3602a7.bindPopup(popup_4bad255b23187d689e23eec37e45a306)
+        ;
+
+        
+    
+    
+            var circle_marker_7524562009346d0c97a75aafcb4ec820 = L.circleMarker(
+                [21.0285, 105.8542],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.977090028606798, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_4d9bb4df435d9d32a97b229473458bfc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e9e3504bf62c8e830a4a1244ce5a03d2 = $(`<div id="html_e9e3504bf62c8e830a4a1244ce5a03d2" style="width: 100.0%; height: 100.0%;">Hà Nội: $917,720,944,855 (15.55% of Total Revenue)</div>`)[0];
+                popup_4d9bb4df435d9d32a97b229473458bfc.setContent(html_e9e3504bf62c8e830a4a1244ce5a03d2);
+            
+        
+
+        circle_marker_7524562009346d0c97a75aafcb4ec820.bindPopup(popup_4d9bb4df435d9d32a97b229473458bfc)
+        ;
+
+        
+    
+    
+            var circle_marker_fe02bf23e89699948c3a119d6901b619 = L.circleMarker(
+                [20.5769, 106.0712],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0191577314519455, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_7195ab567c3d56f960b81145b68d9d39 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a34d888ecb9f0b5cf8457896809ee9f4 = $(`<div id="html_a34d888ecb9f0b5cf8457896809ee9f4" style="width: 100.0%; height: 100.0%;">Hưng Yên: $3,532,476,067 (0.06% of Total Revenue)</div>`)[0];
+                popup_7195ab567c3d56f960b81145b68d9d39.setContent(html_a34d888ecb9f0b5cf8457896809ee9f4);
+            
+        
+
+        circle_marker_fe02bf23e89699948c3a119d6901b619.bindPopup(popup_7195ab567c3d56f960b81145b68d9d39)
+        ;
+
+        
+    
+    
+            var circle_marker_e6e45616dbfb7472ec856b1feae517d4 = L.circleMarker(
+                [20.9208, 106.327],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.094101109541918, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_980b53fe87c33b6c88ebcf87943f5d9c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a16105a67fd55ce63f76e8986d207c08 = $(`<div id="html_a16105a67fd55ce63f76e8986d207c08" style="width: 100.0%; height: 100.0%;">Hải Dương: $17,351,215,000 (0.29% of Total Revenue)</div>`)[0];
+                popup_980b53fe87c33b6c88ebcf87943f5d9c.setContent(html_a16105a67fd55ce63f76e8986d207c08);
+            
+        
+
+        circle_marker_e6e45616dbfb7472ec856b1feae517d4.bindPopup(popup_980b53fe87c33b6c88ebcf87943f5d9c)
+        ;
+
+        
+    
+    
+            var circle_marker_34b80bc4f79ff1c5663b6faf868e211f = L.circleMarker(
+                [20.8449, 106.685],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.468072470104828, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_be08b9e6a03f092c932dd721e038a708 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c893861539b2eb44a79cb10904bc46eb = $(`<div id="html_c893861539b2eb44a79cb10904bc46eb" style="width: 100.0%; height: 100.0%;">Hải Phòng: $86,307,442,111 (1.46% of Total Revenue)</div>`)[0];
+                popup_be08b9e6a03f092c932dd721e038a708.setContent(html_c893861539b2eb44a79cb10904bc46eb);
+            
+        
+
+        circle_marker_34b80bc4f79ff1c5663b6faf868e211f.bindPopup(popup_be08b9e6a03f092c932dd721e038a708)
+        ;
+
+        
+    
+    
+            var circle_marker_9e75c28c5a761372409a01a946dc97ea = L.circleMarker(
+                [10.8231, 106.6297],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.826963292562423, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_e285dcb28cbec0c870ee7e4ae5885144 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f63866719707208abc86b4ac05f04f5e = $(`<div id="html_f63866719707208abc86b4ac05f04f5e" style="width: 100.0%; height: 100.0%;">Hồ Chí Minh: $2,180,762,627,405 (36.96% of Total Revenue)</div>`)[0];
+                popup_e285dcb28cbec0c870ee7e4ae5885144.setContent(html_f63866719707208abc86b4ac05f04f5e);
+            
+        
+
+        circle_marker_9e75c28c5a761372409a01a946dc97ea.bindPopup(popup_e285dcb28cbec0c870ee7e4ae5885144)
+        ;
+
+        
+    
+    
+            var circle_marker_b414dbf60235adbf5d3fc1fbeb18c57f = L.circleMarker(
+                [15.8801, 108.338],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0921075205360085, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_457dfbf51650f22118e3d54d9e698862 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a6c7104de77edf2defcc8c090ffa5504 = $(`<div id="html_a6c7104de77edf2defcc8c090ffa5504" style="width: 100.0%; height: 100.0%;">Hội An: $16,983,619,000 (0.29% of Total Revenue)</div>`)[0];
+                popup_457dfbf51650f22118e3d54d9e698862.setContent(html_a6c7104de77edf2defcc8c090ffa5504);
+            
+        
+
+        circle_marker_b414dbf60235adbf5d3fc1fbeb18c57f.bindPopup(popup_457dfbf51650f22118e3d54d9e698862)
+        ;
+
+        
+    
+    
+            var circle_marker_530eaf798007586f130497c8b48194d8 = L.circleMarker(
+                [10.9728, 106.0662],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1691434797691693, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_6f138bbbb2a360790fe1d31907feb295 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_695fe5b463e2775b5eeba2656c373328 = $(`<div id="html_695fe5b463e2775b5eeba2656c373328" style="width: 100.0%; height: 100.0%;">Long Khánh: $31,188,207,000 (0.53% of Total Revenue)</div>`)[0];
+                popup_6f138bbbb2a360790fe1d31907feb295.setContent(html_695fe5b463e2775b5eeba2656c373328);
+            
+        
+
+        circle_marker_530eaf798007586f130497c8b48194d8.bindPopup(popup_6f138bbbb2a360790fe1d31907feb295)
+        ;
+
+        
+    
+    
+            var circle_marker_d174303501e482d05c7f5b2a050c3dc1 = L.circleMarker(
+                [11.666, 108.65],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0495336603495646, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_d9dc65e97134b32a76c7f7c1208f89b4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_654e8d1ac3dbc4f5be766ac572edfd89 = $(`<div id="html_654e8d1ac3dbc4f5be766ac572edfd89" style="width: 100.0%; height: 100.0%;">Lâm Đồng: $9,133,465,000 (0.15% of Total Revenue)</div>`)[0];
+                popup_d9dc65e97134b32a76c7f7c1208f89b4.setContent(html_654e8d1ac3dbc4f5be766ac572edfd89);
+            
+        
+
+        circle_marker_d174303501e482d05c7f5b2a050c3dc1.bindPopup(popup_d9dc65e97134b32a76c7f7c1208f89b4)
+        ;
+
+        
+    
+    
+            var circle_marker_95955e9e34c2d3e6087fcce6bee5c2f7 = L.circleMarker(
+                [20.4142, 106.1654],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1237761837684763, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_f8313edb698b3ccf696bad51225e3a67 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_33bf2f2b52402450cea46a598a0e4e2a = $(`<div id="html_33bf2f2b52402450cea46a598a0e4e2a" style="width: 100.0%; height: 100.0%;">Nam Định: $22,822,974,000 (0.39% of Total Revenue)</div>`)[0];
+                popup_f8313edb698b3ccf696bad51225e3a67.setContent(html_33bf2f2b52402450cea46a598a0e4e2a);
+            
+        
+
+        circle_marker_95955e9e34c2d3e6087fcce6bee5c2f7.bindPopup(popup_f8313edb698b3ccf696bad51225e3a67)
+        ;
+
+        
+    
+    
+            var circle_marker_b211470861ad56ee28bf0128bc87d058 = L.circleMarker(
+                [12.2384, 109.1967],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.442960546406118, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_784a2b0aa5df6fef3802c71178f178b6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e7e9b9b956af81553a160bac3d99df77 = $(`<div id="html_e7e9b9b956af81553a160bac3d99df77" style="width: 100.0%; height: 100.0%;">Nha Trang: $81,677,078,141 (1.38% of Total Revenue)</div>`)[0];
+                popup_784a2b0aa5df6fef3802c71178f178b6.setContent(html_e7e9b9b956af81553a160bac3d99df77);
+            
+        
+
+        circle_marker_b211470861ad56ee28bf0128bc87d058.bindPopup(popup_784a2b0aa5df6fef3802c71178f178b6)
+        ;
+
+        
+    
+    
+            var circle_marker_f7127c5046525bb83dc4a06c708cc253 = L.circleMarker(
+                [20.2532, 105.9743],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0866703215627753, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_851bb6e66da0f505e7d645324d63c5dc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_22a44ef50c2e31de03ebebeca11ec98b = $(`<div id="html_22a44ef50c2e31de03ebebeca11ec98b" style="width: 100.0%; height: 100.0%;">Ninh Bình: $15,981,059,000 (0.27% of Total Revenue)</div>`)[0];
+                popup_851bb6e66da0f505e7d645324d63c5dc.setContent(html_22a44ef50c2e31de03ebebeca11ec98b);
+            
+        
+
+        circle_marker_f7127c5046525bb83dc4a06c708cc253.bindPopup(popup_851bb6e66da0f505e7d645324d63c5dc)
+        ;
+
+        
+    
+    
+            var circle_marker_db6a376e2a0179fc87318b1f83029716 = L.circleMarker(
+                [11.5891, 108.97],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.202486559056329, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_3b31a6594b8600c664c78cf207781770 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6a6dab339a9b2342c0148110a0201ecb = $(`<div id="html_6a6dab339a9b2342c0148110a0201ecb" style="width: 100.0%; height: 100.0%;">Phan Rang–Tháp Chàm: $37,336,306,000 (0.63% of Total Revenue)</div>`)[0];
+                popup_3b31a6594b8600c664c78cf207781770.setContent(html_6a6dab339a9b2342c0148110a0201ecb);
+            
+        
+
+        circle_marker_db6a376e2a0179fc87318b1f83029716.bindPopup(popup_3b31a6594b8600c664c78cf207781770)
+        ;
+
+        
+    
+    
+            var circle_marker_437c956b6a115cc42a5219c760e2493e = L.circleMarker(
+                [10.933, 108.091],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.280367481657695, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_64be65d4e3db4b2bf530fb4bfd5364dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_66bd997d22cf3779f8675d6358de50b4 = $(`<div id="html_66bd997d22cf3779f8675d6358de50b4" style="width: 100.0%; height: 100.0%;">Phan Thiết: $51,696,696,000 (0.88% of Total Revenue)</div>`)[0];
+                popup_64be65d4e3db4b2bf530fb4bfd5364dd.setContent(html_66bd997d22cf3779f8675d6358de50b4);
+            
+        
+
+        circle_marker_437c956b6a115cc42a5219c760e2493e.bindPopup(popup_64be65d4e3db4b2bf530fb4bfd5364dd)
+        ;
+
+        
+    
+    
+            var circle_marker_981181abbd49bc4200b786dfd5b4c167 = L.circleMarker(
+                [21.3364, 105.1895],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.082898910149614, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_20bc8fea3360ca9dcb4b165bcf8bfedc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a7d036de6850cff51857578475c3829 = $(`<div id="html_4a7d036de6850cff51857578475c3829" style="width: 100.0%; height: 100.0%;">Phú Thọ: $15,285,652,000 (0.26% of Total Revenue)</div>`)[0];
+                popup_20bc8fea3360ca9dcb4b165bcf8bfedc.setContent(html_4a7d036de6850cff51857578475c3829);
+            
+        
+
+        circle_marker_981181abbd49bc4200b786dfd5b4c167.bindPopup(popup_20bc8fea3360ca9dcb4b165bcf8bfedc)
+        ;
+
+        
+    
+    
+            var circle_marker_1d1b224874b0e94a0a6f0dadd191ddbf = L.circleMarker(
+                [20.5275, 105.922],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.070582148962918, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_63a19728ab9394df0804e4b50d3675b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8accbe2ab52fb5df4a936c12a52cf0c4 = $(`<div id="html_8accbe2ab52fb5df4a936c12a52cf0c4" style="width: 100.0%; height: 100.0%;">Phủ Lý: $13,014,576,000 (0.22% of Total Revenue)</div>`)[0];
+                popup_63a19728ab9394df0804e4b50d3675b1.setContent(html_8accbe2ab52fb5df4a936c12a52cf0c4);
+            
+        
+
+        circle_marker_1d1b224874b0e94a0a6f0dadd191ddbf.bindPopup(popup_63a19728ab9394df0804e4b50d3675b1)
+        ;
+
+        
+    
+    
+            var circle_marker_7d1dfb0e970a7d3b11b7cdb92393c436 = L.circleMarker(
+                [13.782, 109.219],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.296869670423083, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_c0c8a896b6197c2c4bc0e6434671c78b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d4818e551d1ceb30c8349f93e63500ae = $(`<div id="html_d4818e551d1ceb30c8349f93e63500ae" style="width: 100.0%; height: 100.0%;">Quy Nhơn: $54,739,519,051 (0.93% of Total Revenue)</div>`)[0];
+                popup_c0c8a896b6197c2c4bc0e6434671c78b.setContent(html_d4818e551d1ceb30c8349f93e63500ae);
+            
+        
+
+        circle_marker_7d1dfb0e970a7d3b11b7cdb92393c436.bindPopup(popup_c0c8a896b6197c2c4bc0e6434671c78b)
+        ;
+
+        
+    
+    
+            var circle_marker_b99ada55a3b3b0bde195e74872dcb630 = L.circleMarker(
+                [17.4871, 106.0614],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.01034484374867, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_0ee98358ef113e08be8be990fbf09ae6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1cb3041469d4c2e0f41833ea42ab7cb4 = $(`<div id="html_1cb3041469d4c2e0f41833ea42ab7cb4" style="width: 100.0%; height: 100.0%;">Quảng Bình: $1,907,476,000 (0.03% of Total Revenue)</div>`)[0];
+                popup_0ee98358ef113e08be8be990fbf09ae6.setContent(html_1cb3041469d4c2e0f41833ea42ab7cb4);
+            
+        
+
+        circle_marker_b99ada55a3b3b0bde195e74872dcb630.bindPopup(popup_0ee98358ef113e08be8be990fbf09ae6)
+        ;
+
+        
+    
+    
+            var circle_marker_bf413d09b6037ff4892851cf50e61f9c = L.circleMarker(
+                [19.807, 105.7761],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2327193507569643, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_4c9aa289218f883a36123701ca229692 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1f5983e0f84302c52517473edf3d6173 = $(`<div id="html_1f5983e0f84302c52517473edf3d6173" style="width: 100.0%; height: 100.0%;">Thanh Hóa: $42,910,902,000 (0.73% of Total Revenue)</div>`)[0];
+                popup_4c9aa289218f883a36123701ca229692.setContent(html_1f5983e0f84302c52517473edf3d6173);
+            
+        
+
+        circle_marker_bf413d09b6037ff4892851cf50e61f9c.bindPopup(popup_4c9aa289218f883a36123701ca229692)
+        ;
+
+        
+    
+    
+            var circle_marker_db665a6738fb77a2e0eaacc87987fd59 = L.circleMarker(
+                [10.9395, 106.8019],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.5431506746763235, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_2611c09b6c88ff533b4c110c43be9a76 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_051dc0a795d0081096c50311297319e8 = $(`<div id="html_051dc0a795d0081096c50311297319e8" style="width: 100.0%; height: 100.0%;">Thuận An: $100,151,041,572 (1.70% of Total Revenue)</div>`)[0];
+                popup_2611c09b6c88ff533b4c110c43be9a76.setContent(html_051dc0a795d0081096c50311297319e8);
+            
+        
+
+        circle_marker_db665a6738fb77a2e0eaacc87987fd59.bindPopup(popup_2611c09b6c88ff533b4c110c43be9a76)
+        ;
+
+        
+    
+    
+            var circle_marker_0e23fb4b8146d52997b1e28598f04a46 = L.circleMarker(
+                [10.9457, 106.8236],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.9394461624333585, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_8165de57fb42373a1f0d1e006baf49b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a8615c188f50d4fa95416bec236cd52e = $(`<div id="html_a8615c188f50d4fa95416bec236cd52e" style="width: 100.0%; height: 100.0%;">Thành phố Biên Hòa: $173,223,593,480 (2.94% of Total Revenue)</div>`)[0];
+                popup_8165de57fb42373a1f0d1e006baf49b5.setContent(html_a8615c188f50d4fa95416bec236cd52e);
+            
+        
+
+        circle_marker_0e23fb4b8146d52997b1e28598f04a46.bindPopup(popup_8165de57fb42373a1f0d1e006baf49b5)
+        ;
+
+        
+    
+    
+            var circle_marker_55cd3be174c0584332df6ffe8cef0849 = L.circleMarker(
+                [12.648, 108.086],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.323710205452912, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_403eb83831ce0e4497f7871e5c14c106 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1eee9f1c3fe70d0fec9496a11d3e23c6 = $(`<div id="html_1eee9f1c3fe70d0fec9496a11d3e23c6" style="width: 100.0%; height: 100.0%;">Thành phố Buôn Ma Thuột: $59,688,620,037 (1.01% of Total Revenue)</div>`)[0];
+                popup_403eb83831ce0e4497f7871e5c14c106.setContent(html_1eee9f1c3fe70d0fec9496a11d3e23c6);
+            
+        
+
+        circle_marker_55cd3be174c0584332df6ffe8cef0849.bindPopup(popup_403eb83831ce0e4497f7871e5c14c106)
+        ;
+
+        
+    
+    
+            var circle_marker_ce3b1505f83f3d9e9718596610e959e0 = L.circleMarker(
+                [10.5152, 107.2304],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0314142717823427, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_827ea32aebddcc0f6a4176bfd5e95a87 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ee502b20f973399d02d5740e607ed80a = $(`<div id="html_ee502b20f973399d02d5740e607ed80a" style="width: 100.0%; height: 100.0%;">Thành phố Bà Rịa: $5,792,448,000 (0.10% of Total Revenue)</div>`)[0];
+                popup_827ea32aebddcc0f6a4176bfd5e95a87.setContent(html_ee502b20f973399d02d5740e607ed80a);
+            
+        
+
+        circle_marker_ce3b1505f83f3d9e9718596610e959e0.bindPopup(popup_827ea32aebddcc0f6a4176bfd5e95a87)
+        ;
+
+        
+    
+    
+            var circle_marker_e669fc9b383b64694d60bca6f19ce582 = L.circleMarker(
+                [9.287, 105.7424],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.01422503907859, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_043c45aa5a297984bc94d37f9544cc97 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d66733089794d235712828a0e0f2eb9 = $(`<div id="html_1d66733089794d235712828a0e0f2eb9" style="width: 100.0%; height: 100.0%;">Thành phố Bạc Liêu: $2,622,941,564 (0.04% of Total Revenue)</div>`)[0];
+                popup_043c45aa5a297984bc94d37f9544cc97.setContent(html_1d66733089794d235712828a0e0f2eb9);
+            
+        
+
+        circle_marker_e669fc9b383b64694d60bca6f19ce582.bindPopup(popup_043c45aa5a297984bc94d37f9544cc97)
+        ;
+
+        
+    
+    
+            var circle_marker_4d2a8f0f6a58707e5b664c7216194b6f = L.circleMarker(
+                [11.4973, 107.503],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0203828254718217, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_c8966600647ae94796adca96b38ea49c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_185e6ba3f41857aa28d949265e691fed = $(`<div id="html_185e6ba3f41857aa28d949265e691fed" style="width: 100.0%; height: 100.0%;">Thành phố Bảo Lộc: $3,758,370,000 (0.06% of Total Revenue)</div>`)[0];
+                popup_c8966600647ae94796adca96b38ea49c.setContent(html_185e6ba3f41857aa28d949265e691fed);
+            
+        
+
+        circle_marker_4d2a8f0f6a58707e5b664c7216194b6f.bindPopup(popup_c8966600647ae94796adca96b38ea49c)
+        ;
+
+        
+    
+    
+            var circle_marker_99cfcf88c5b9a353ede2eb68e33f5a71 = L.circleMarker(
+                [21.2855, 106.1974],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0533056032476242, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_94fda6286be98435d99e8731934e804c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4d9e4ba77d8e7a3df5bffb2e09acc45c = $(`<div id="html_4d9e4ba77d8e7a3df5bffb2e09acc45c" style="width: 100.0%; height: 100.0%;">Thành phố Bắc Giang: $9,828,970,000 (0.17% of Total Revenue)</div>`)[0];
+                popup_94fda6286be98435d99e8731934e804c.setContent(html_4d9e4ba77d8e7a3df5bffb2e09acc45c);
+            
+        
+
+        circle_marker_99cfcf88c5b9a353ede2eb68e33f5a71.bindPopup(popup_94fda6286be98435d99e8731934e804c)
+        ;
+
+        
+    
+    
+            var circle_marker_e9f5b24f09f40497a8283d68523ce087 = L.circleMarker(
+                [21.1844, 106.0391],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0006274504620256, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_686a36a334e47b5adc7d5f6da9e11856 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_47ff6fc9ea8b0e74c8e855b37ac2d130 = $(`<div id="html_47ff6fc9ea8b0e74c8e855b37ac2d130" style="width: 100.0%; height: 100.0%;">Thành phố Bắc Ninh: $115,695,000 (0.00% of Total Revenue)</div>`)[0];
+                popup_686a36a334e47b5adc7d5f6da9e11856.setContent(html_47ff6fc9ea8b0e74c8e855b37ac2d130);
+            
+        
+
+        circle_marker_e9f5b24f09f40497a8283d68523ce087.bindPopup(popup_686a36a334e47b5adc7d5f6da9e11856)
+        ;
+
+        
+    
+    
+            var circle_marker_73afff387c3ac5736112a48312fa5874 = L.circleMarker(
+                [10.3777, 105.61],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.194196227142105, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_3943a4512dad1ed393a745474bb7b97d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a880705a263b8903c7ba8a752420f1d1 = $(`<div id="html_a880705a263b8903c7ba8a752420f1d1" style="width: 100.0%; height: 100.0%;">Thành phố Cao Lãnh: $35,807,659,503 (0.61% of Total Revenue)</div>`)[0];
+                popup_3943a4512dad1ed393a745474bb7b97d.setContent(html_a880705a263b8903c7ba8a752420f1d1);
+            
+        
+
+        circle_marker_73afff387c3ac5736112a48312fa5874.bindPopup(popup_3943a4512dad1ed393a745474bb7b97d)
+        ;
+
+        
+    
+    
+            var circle_marker_740f2bef31dd38832ddd3fb894c2b73f = L.circleMarker(
+                [8.5718, 105.147],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.139018823552024, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_b79f055f168011239f25699d95485d6f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4470dba0a7786abb24769c5981372be1 = $(`<div id="html_4470dba0a7786abb24769c5981372be1" style="width: 100.0%; height: 100.0%;">Thành phố Cà Mau: $25,633,550,000 (0.43% of Total Revenue)</div>`)[0];
+                popup_b79f055f168011239f25699d95485d6f.setContent(html_4470dba0a7786abb24769c5981372be1);
+            
+        
+
+        circle_marker_740f2bef31dd38832ddd3fb894c2b73f.bindPopup(popup_b79f055f168011239f25699d95485d6f)
+        ;
+
+        
+    
+    
+            var circle_marker_6647cd9c835a5532695368c667276a99 = L.circleMarker(
+                [27.1287, 107.133],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0363932534369913, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_d2deae3787ebeeb1a81b1b0557314308 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6a3654474a25dade4d94bfbda0a7ff0c = $(`<div id="html_6a3654474a25dade4d94bfbda0a7ff0c" style="width: 100.0%; height: 100.0%;">Thành phố Cẩm Phả: $6,710,517,740 (0.11% of Total Revenue)</div>`)[0];
+                popup_d2deae3787ebeeb1a81b1b0557314308.setContent(html_6a3654474a25dade4d94bfbda0a7ff0c);
+            
+        
+
+        circle_marker_6647cd9c835a5532695368c667276a99.bindPopup(popup_d2deae3787ebeeb1a81b1b0557314308)
+        ;
+
+        
+    
+    
+            var circle_marker_db2fdb502bb73693b30aa81a555a99aa = L.circleMarker(
+                [16.4633, 107.5909],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.381085659529914, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_6092639df9a2d2502d3c47c46dc10afb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_436af1dcd2880112d4d42393efe635cd = $(`<div id="html_436af1dcd2880112d4d42393efe635cd" style="width: 100.0%; height: 100.0%;">Thành phố Huế: $70,268,026,000 (1.19% of Total Revenue)</div>`)[0];
+                popup_6092639df9a2d2502d3c47c46dc10afb.setContent(html_436af1dcd2880112d4d42393efe635cd);
+            
+        
+
+        circle_marker_db2fdb502bb73693b30aa81a555a99aa.bindPopup(popup_6092639df9a2d2502d3c47c46dc10afb)
+        ;
+
+        
+    
+    
+            var circle_marker_da88754c34328a893eabadd2ed80f8bb = L.circleMarker(
+                [18.331, 105.9164],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0981876612863264, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_fd296cf0795207443f266c1ca62636c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_13960fab96af25f157859a4c2363eb90 = $(`<div id="html_13960fab96af25f157859a4c2363eb90" style="width: 100.0%; height: 100.0%;">Thành phố Hà Tĩnh: $18,104,730,429 (0.31% of Total Revenue)</div>`)[0];
+                popup_fd296cf0795207443f266c1ca62636c5.setContent(html_13960fab96af25f157859a4c2363eb90);
+            
+        
+
+        circle_marker_da88754c34328a893eabadd2ed80f8bb.bindPopup(popup_fd296cf0795207443f266c1ca62636c5)
+        ;
+
+        
+    
+    
+            var circle_marker_4bf7885183d680f21941b5df9028d9f4 = L.circleMarker(
+                [20.9661, 107.0836],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1829703521801465, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_b1a6c9a2f90c55caef1a69bb215d5f9b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1332276bbd0b94c9dc6915775c63e96 = $(`<div id="html_a1332276bbd0b94c9dc6915775c63e96" style="width: 100.0%; height: 100.0%;">Thành phố Hạ Long: $33,737,730,987 (0.57% of Total Revenue)</div>`)[0];
+                popup_b1a6c9a2f90c55caef1a69bb215d5f9b.setContent(html_a1332276bbd0b94c9dc6915775c63e96);
+            
+        
+
+        circle_marker_4bf7885183d680f21941b5df9028d9f4.bindPopup(popup_b1a6c9a2f90c55caef1a69bb215d5f9b)
+        ;
+
+        
+    
+    
+            var circle_marker_f189196954d311d25d1936e387a0c049 = L.circleMarker(
+                [14.3502, 106.016],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0507630988137704, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_0b017a376a6c514338b00ee1b44112f9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9cb6654d1eb4759be9e041eaa361aa28 = $(`<div id="html_9cb6654d1eb4759be9e041eaa361aa28" style="width: 100.0%; height: 100.0%;">Thành phố Kon Tum: $9,360,160,001 (0.16% of Total Revenue)</div>`)[0];
+                popup_0b017a376a6c514338b00ee1b44112f9.setContent(html_9cb6654d1eb4759be9e041eaa361aa28);
+            
+        
+
+        circle_marker_f189196954d311d25d1936e387a0c049.bindPopup(popup_0b017a376a6c514338b00ee1b44112f9)
+        ;
+
+        
+    
+    
+            var circle_marker_38e560b281a86c99f7617167b4317f21 = L.circleMarker(
+                [10.3806, 105.4354],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.3162490033209826, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_999427e68f93b600e84f652738ff8d2c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6582a8e5ac2ea9e9cf25d2421220068f = $(`<div id="html_6582a8e5ac2ea9e9cf25d2421220068f" style="width: 100.0%; height: 100.0%;">Thành phố Long Xuyên: $58,312,856,000 (0.99% of Total Revenue)</div>`)[0];
+                popup_999427e68f93b600e84f652738ff8d2c.setContent(html_6582a8e5ac2ea9e9cf25d2421220068f);
+            
+        
+
+        circle_marker_38e560b281a86c99f7617167b4317f21.bindPopup(popup_999427e68f93b600e84f652738ff8d2c)
+        ;
+
+        
+    
+    
+            var circle_marker_c4515f57009368c8709e8bad822b9a3c = L.circleMarker(
+                [22.4647, 103.6056],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0049729577614275, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_5482de07977098c2f05ef79ac0c100ce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bed5b8d98e1a8cc1cd3131df7d65ae3b = $(`<div id="html_bed5b8d98e1a8cc1cd3131df7d65ae3b" style="width: 100.0%; height: 100.0%;">Thành phố Lào Cai: $916,959,000 (0.02% of Total Revenue)</div>`)[0];
+                popup_5482de07977098c2f05ef79ac0c100ce.setContent(html_bed5b8d98e1a8cc1cd3131df7d65ae3b);
+            
+        
+
+        circle_marker_c4515f57009368c8709e8bad822b9a3c.bindPopup(popup_5482de07977098c2f05ef79ac0c100ce)
+        ;
+
+        
+    
+    
+            var circle_marker_7186114aca72fe2d4f55b20f428a0684 = L.circleMarker(
+                [21.8252, 106.7546],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0330966511891515, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_900524e1e45b83f4df50bdbff23509cc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0ca9081f8ce3153db3d7d13ffb8dc10a = $(`<div id="html_0ca9081f8ce3153db3d7d13ffb8dc10a" style="width: 100.0%; height: 100.0%;">Thành phố Lạng Sơn: $6,102,660,355 (0.10% of Total Revenue)</div>`)[0];
+                popup_900524e1e45b83f4df50bdbff23509cc.setContent(html_0ca9081f8ce3153db3d7d13ffb8dc10a);
+            
+        
+
+        circle_marker_7186114aca72fe2d4f55b20f428a0684.bindPopup(popup_900524e1e45b83f4df50bdbff23509cc)
+        ;
+
+        
+    
+    
+            var circle_marker_a261660a1c8b7ff64dd49dabf521fed8 = L.circleMarker(
+                [21.258, 107.965],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.026599255404335, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_27a2b90ea3afaaf14444d6377989d331 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce1fbcfbd76f1113fa5d9005735404ac = $(`<div id="html_ce1fbcfbd76f1113fa5d9005735404ac" style="width: 100.0%; height: 100.0%;">Thành phố Móng Cái: $4,904,611,663 (0.08% of Total Revenue)</div>`)[0];
+                popup_27a2b90ea3afaaf14444d6377989d331.setContent(html_ce1fbcfbd76f1113fa5d9005735404ac);
+            
+        
+
+        circle_marker_a261660a1c8b7ff64dd49dabf521fed8.bindPopup(popup_27a2b90ea3afaaf14444d6377989d331)
+        ;
+
+        
+    
+    
+            var circle_marker_4c342127e4009558b26cba1b9053cc22 = L.circleMarker(
+                [10.3542, 106.3547],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.408963447753996, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_fb7a3c0c0307af5fe7c8e9c4b5e2d059 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_231d32eb695d2206074953ab9ff2c1b3 = $(`<div id="html_231d32eb695d2206074953ab9ff2c1b3" style="width: 100.0%; height: 100.0%;">Thành phố Mỹ Tho: $75,408,385,126 (1.28% of Total Revenue)</div>`)[0];
+                popup_fb7a3c0c0307af5fe7c8e9c4b5e2d059.setContent(html_231d32eb695d2206074953ab9ff2c1b3);
+            
+        
+
+        circle_marker_4c342127e4009558b26cba1b9053cc22.bindPopup(popup_fb7a3c0c0307af5fe7c8e9c4b5e2d059)
+        ;
+
+        
+    
+    
+            var circle_marker_48ca1d74fea4dd7fa9f7a63e6d053379 = L.circleMarker(
+                [10.227, 103.9365],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0252232807941795, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_5c549e4dc02481276e0d2db988ec3f8a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eb94d05a180952851ea14df563f2a55c = $(`<div id="html_eb94d05a180952851ea14df563f2a55c" style="width: 100.0%; height: 100.0%;">Thành phố Phú Quốc: $4,650,897,000 (0.08% of Total Revenue)</div>`)[0];
+                popup_5c549e4dc02481276e0d2db988ec3f8a.setContent(html_eb94d05a180952851ea14df563f2a55c);
+            
+        
+
+        circle_marker_48ca1d74fea4dd7fa9f7a63e6d053379.bindPopup(popup_5c549e4dc02481276e0d2db988ec3f8a)
+        ;
+
+        
+    
+    
+            var circle_marker_6e26f7fd3775cf2984669ff6ce7789f8 = L.circleMarker(
+                [13.9797, 108.4956],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1479930816382753, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_eaa9f006a8437c362e88f8a20619e5e0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5fb7dc8dfa818f6959de6865fa44f067 = $(`<div id="html_5fb7dc8dfa818f6959de6865fa44f067" style="width: 100.0%; height: 100.0%;">Thành phố Pleiku: $27,288,305,000 (0.46% of Total Revenue)</div>`)[0];
+                popup_eaa9f006a8437c362e88f8a20619e5e0.setContent(html_5fb7dc8dfa818f6959de6865fa44f067);
+            
+        
+
+        circle_marker_6e26f7fd3775cf2984669ff6ce7789f8.bindPopup(popup_eaa9f006a8437c362e88f8a20619e5e0)
+        ;
+
+        
+    
+    
+            var circle_marker_2e8464c11455481d11c702af6d287962 = L.circleMarker(
+                [15.1161, 108.4477],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.184144010355223, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_a75a05e01566b4d9be8d78680ba350ce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42115c144fa1132d63cb94b1f124af5f = $(`<div id="html_42115c144fa1132d63cb94b1f124af5f" style="width: 100.0%; height: 100.0%;">Thành phố Quảng Ngãi: $33,954,140,713 (0.58% of Total Revenue)</div>`)[0];
+                popup_a75a05e01566b4d9be8d78680ba350ce.setContent(html_42115c144fa1132d63cb94b1f124af5f);
+            
+        
+
+        circle_marker_2e8464c11455481d11c702af6d287962.bindPopup(popup_a75a05e01566b4d9be8d78680ba350ce)
+        ;
+
+        
+    
+    
+            var circle_marker_c778f8424075989f90fafa64fa65c0a0 = L.circleMarker(
+                [10.0087, 105.0812],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.223403220444212, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_04dd08c19326fa7012b45ae503b35fdc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c8ba90d267818e376efd8fcef39fbfa2 = $(`<div id="html_c8ba90d267818e376efd8fcef39fbfa2" style="width: 100.0%; height: 100.0%;">Thành phố Rạch Giá: $41,193,109,502 (0.70% of Total Revenue)</div>`)[0];
+                popup_04dd08c19326fa7012b45ae503b35fdc.setContent(html_c8ba90d267818e376efd8fcef39fbfa2);
+            
+        
+
+        circle_marker_c778f8424075989f90fafa64fa65c0a0.bindPopup(popup_04dd08c19326fa7012b45ae503b35fdc)
+        ;
+
+        
+    
+    
+            var circle_marker_b84e8c6acb8c8d1406efa5b4847ba842 = L.circleMarker(
+                [9.6031, 105.968],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.136471991155296, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_e55298d527d9ee3c9e02ccc9f1de456b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_927751e6b39d039b782971ef341bfe31 = $(`<div id="html_927751e6b39d039b782971ef341bfe31" style="width: 100.0%; height: 100.0%;">Thành phố Sóc Trăng: $25,163,941,972 (0.43% of Total Revenue)</div>`)[0];
+                popup_e55298d527d9ee3c9e02ccc9f1de456b.setContent(html_927751e6b39d039b782971ef341bfe31);
+            
+        
+
+        circle_marker_b84e8c6acb8c8d1406efa5b4847ba842.bindPopup(popup_e55298d527d9ee3c9e02ccc9f1de456b)
+        ;
+
+        
+    
+    
+            var circle_marker_23bd9755b28bfdd1955c0494a4fafb82 = L.circleMarker(
+                [21.3254, 103.92],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.018447755317752, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_98b9c59ee6924ca25aa2f4b33716dbac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9f15d3f92aaabda1558fa5ae49964f11 = $(`<div id="html_9f15d3f92aaabda1558fa5ae49964f11" style="width: 100.0%; height: 100.0%;">Thành phố Sơn La: $3,401,564,236 (0.06% of Total Revenue)</div>`)[0];
+                popup_98b9c59ee6924ca25aa2f4b33716dbac.setContent(html_9f15d3f92aaabda1558fa5ae49964f11);
+            
+        
+
+        circle_marker_23bd9755b28bfdd1955c0494a4fafb82.bindPopup(popup_98b9c59ee6924ca25aa2f4b33716dbac)
+        ;
+
+        
+    
+    
+            var circle_marker_a6ee43e37c686fefcf4598aa141fe60c = L.circleMarker(
+                [15.5728, 108.4896],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0571017504018054, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_b34e2b743093aaedb291697087d17c6e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3a16c7dcc29b400c7be9d8dcf58a45fc = $(`<div id="html_3a16c7dcc29b400c7be9d8dcf58a45fc" style="width: 100.0%; height: 100.0%;">Thành phố Tam Kỳ: $10,528,938,000 (0.18% of Total Revenue)</div>`)[0];
+                popup_b34e2b743093aaedb291697087d17c6e.setContent(html_3a16c7dcc29b400c7be9d8dcf58a45fc);
+            
+        
+
+        circle_marker_a6ee43e37c686fefcf4598aa141fe60c.bindPopup(popup_b34e2b743093aaedb291697087d17c6e)
+        ;
+
+        
+    
+    
+            var circle_marker_9f3c478ea6f23672413e128715c4263a = L.circleMarker(
+                [21.5972, 105.843],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2874959922217433, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_8938f0962e220b62957334715ce31306 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_475ef53e748ddecc860b42d56580ded6 = $(`<div id="html_475ef53e748ddecc860b42d56580ded6" style="width: 100.0%; height: 100.0%;">Thành phố Thái Nguyên: $53,011,115,352 (0.90% of Total Revenue)</div>`)[0];
+                popup_8938f0962e220b62957334715ce31306.setContent(html_475ef53e748ddecc860b42d56580ded6);
+            
+        
+
+        circle_marker_9f3c478ea6f23672413e128715c4263a.bindPopup(popup_8938f0962e220b62957334715ce31306)
+        ;
+
+        
+    
+    
+            var circle_marker_1f2c1798356b4c8bac45e4f557ac118f = L.circleMarker(
+                [11.0469, 106.6217],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.6624394559960805, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_56b4255fa0b64732b75db1272ca98c4d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f2a03f683c2559d8ff4342563fc7cc8c = $(`<div id="html_f2a03f683c2559d8ff4342563fc7cc8c" style="width: 100.0%; height: 100.0%;">Thành phố Thủ Dầu Một: $122,146,587,659 (2.07% of Total Revenue)</div>`)[0];
+                popup_56b4255fa0b64732b75db1272ca98c4d.setContent(html_f2a03f683c2559d8ff4342563fc7cc8c);
+            
+        
+
+        circle_marker_1f2c1798356b4c8bac45e4f557ac118f.bindPopup(popup_56b4255fa0b64732b75db1272ca98c4d)
+        ;
+
+        
+    
+    
+            var circle_marker_0955d7b92576009773f2a8c2ae6aa4c7 = L.circleMarker(
+                [9.927, 106.3466],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.099932772381712, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_f0f7c51ea45255b46f8ae5bfd071db07 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_65a40883e8ca23fcee80cc693ee6b007 = $(`<div id="html_65a40883e8ca23fcee80cc693ee6b007" style="width: 100.0%; height: 100.0%;">Thành phố Trà Vinh: $18,426,509,821 (0.31% of Total Revenue)</div>`)[0];
+                popup_f0f7c51ea45255b46f8ae5bfd071db07.setContent(html_65a40883e8ca23fcee80cc693ee6b007);
+            
+        
+
+        circle_marker_0955d7b92576009773f2a8c2ae6aa4c7.bindPopup(popup_f0f7c51ea45255b46f8ae5bfd071db07)
+        ;
+
+        
+    
+    
+            var circle_marker_436b038bea136a36fd083f14d2fa6fa3 = L.circleMarker(
+                [13.0928, 109.3027],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.164019341849796, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_9a9bb4adaafa35f148365d60a7355e2d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42f5708268e8ba08b2a64168ecd6c398 = $(`<div id="html_42f5708268e8ba08b2a64168ecd6c398" style="width: 100.0%; height: 100.0%;">Thành phố Tuy Hòa: $30,243,372,033 (0.51% of Total Revenue)</div>`)[0];
+                popup_9a9bb4adaafa35f148365d60a7355e2d.setContent(html_42f5708268e8ba08b2a64168ecd6c398);
+            
+        
+
+        circle_marker_436b038bea136a36fd083f14d2fa6fa3.bindPopup(popup_9a9bb4adaafa35f148365d60a7355e2d)
+        ;
+
+        
+    
+    
+            var circle_marker_341f8320ea661ec9d977f84cd786f38a = L.circleMarker(
+                [10.5504, 106.345],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.132327998133832, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_3cb87a8ae215f34b2480f6599c33b785 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7a7b3681dae9ac132c9561f600e8fcf7 = $(`<div id="html_7a7b3681dae9ac132c9561f600e8fcf7" style="width: 100.0%; height: 100.0%;">Thành phố Tân An: $24,399,835,000 (0.41% of Total Revenue)</div>`)[0];
+                popup_3cb87a8ae215f34b2480f6599c33b785.setContent(html_7a7b3681dae9ac132c9561f600e8fcf7);
+            
+        
+
+        circle_marker_341f8320ea661ec9d977f84cd786f38a.bindPopup(popup_3cb87a8ae215f34b2480f6599c33b785)
+        ;
+
+        
+    
+    
+            var circle_marker_ff483c905dfece52b2f2efb1adef19a5 = L.circleMarker(
+                [11.2687, 106.6333],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0470636385190866, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_c9de2a490fca46eec6081fd6da459c0d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_33ce02e7180e5127a7590a7c4dbe7fd7 = $(`<div id="html_33ce02e7180e5127a7590a7c4dbe7fd7" style="width: 100.0%; height: 100.0%;">Thành phố Tân Uyên: $8,678,020,000 (0.15% of Total Revenue)</div>`)[0];
+                popup_c9de2a490fca46eec6081fd6da459c0d.setContent(html_33ce02e7180e5127a7590a7c4dbe7fd7);
+            
+        
+
+        circle_marker_ff483c905dfece52b2f2efb1adef19a5.bindPopup(popup_c9de2a490fca46eec6081fd6da459c0d)
+        ;
+
+        
+    
+    
+            var circle_marker_e9a1c6370fa4f475540acee24b150a9e = L.circleMarker(
+                [11.3074, 106.092],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.118767360402816, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_469116144c6fb0e0df36032d529de3f8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6567ff21a8965113ab9322d69aeca64f = $(`<div id="html_6567ff21a8965113ab9322d69aeca64f" style="width: 100.0%; height: 100.0%;">Thành phố Tây Ninh: $21,899,401,775 (0.37% of Total Revenue)</div>`)[0];
+                popup_469116144c6fb0e0df36032d529de3f8.setContent(html_6567ff21a8965113ab9322d69aeca64f);
+            
+        
+
+        circle_marker_e9a1c6370fa4f475540acee24b150a9e.bindPopup(popup_469116144c6fb0e0df36032d529de3f8)
+        ;
+
+        
+    
+    
+            var circle_marker_112ed46a4ae5a8510184fb196bc8f690 = L.circleMarker(
+                [18.6732, 105.6725],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.315760694802613, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_fe6d0ef436a433cc7abcdfe207c97ae5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0ba3e9770dc8e3b141b324c82e7f4be7 = $(`<div id="html_0ba3e9770dc8e3b141b324c82e7f4be7" style="width: 100.0%; height: 100.0%;">Thành phố Vinh: $58,222,817,252 (0.99% of Total Revenue)</div>`)[0];
+                popup_fe6d0ef436a433cc7abcdfe207c97ae5.setContent(html_0ba3e9770dc8e3b141b324c82e7f4be7);
+            
+        
+
+        circle_marker_112ed46a4ae5a8510184fb196bc8f690.bindPopup(popup_fe6d0ef436a433cc7abcdfe207c97ae5)
+        ;
+
+        
+    
+    
+            var circle_marker_d10392d9ae56e46e508c15a45a2ddcfb = L.circleMarker(
+                [21.3274, 105.4195],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1383065643431007, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_466313763624fe64fff275cf1b247b23 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_05ebcba90fe951992648216809706a7e = $(`<div id="html_05ebcba90fe951992648216809706a7e" style="width: 100.0%; height: 100.0%;">Thành phố Việt Trì: $25,502,217,195 (0.43% of Total Revenue)</div>`)[0];
+                popup_466313763624fe64fff275cf1b247b23.setContent(html_05ebcba90fe951992648216809706a7e);
+            
+        
+
+        circle_marker_d10392d9ae56e46e508c15a45a2ddcfb.bindPopup(popup_466313763624fe64fff275cf1b247b23)
+        ;
+
+        
+    
+    
+            var circle_marker_16c06064e5a7f96d158c71d4c6f622aa = L.circleMarker(
+                [10.2534, 105.9724],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1782799662502614, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_87b0be196504e76405267db1c627ac75 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5b327714d93ff050b6871cdfeba00393 = $(`<div id="html_5b327714d93ff050b6871cdfeba00393" style="width: 100.0%; height: 100.0%;">Thành phố Vĩnh Long: $32,872,875,141 (0.56% of Total Revenue)</div>`)[0];
+                popup_87b0be196504e76405267db1c627ac75.setContent(html_5b327714d93ff050b6871cdfeba00393);
+            
+        
+
+        circle_marker_16c06064e5a7f96d158c71d4c6f622aa.bindPopup(popup_87b0be196504e76405267db1c627ac75)
+        ;
+
+        
+    
+    
+            var circle_marker_9ef509e1a87b7d7f622d5950c3d0d504 = L.circleMarker(
+                [21.3017, 105.593],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.01853903385743, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_293237435787aa4b4bf2ed9a96756ac3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_387208532d57556b6efa534486219231 = $(`<div id="html_387208532d57556b6efa534486219231" style="width: 100.0%; height: 100.0%;">Thành phố Vĩnh Yên: $3,418,395,000 (0.06% of Total Revenue)</div>`)[0];
+                popup_293237435787aa4b4bf2ed9a96756ac3.setContent(html_387208532d57556b6efa534486219231);
+            
+        
+
+        circle_marker_9ef509e1a87b7d7f622d5950c3d0d504.bindPopup(popup_293237435787aa4b4bf2ed9a96756ac3)
+        ;
+
+        
+    
+    
+            var circle_marker_8c35b7d2dbf221421965bf6e58cc042d = L.circleMarker(
+                [9.7444, 105.4469],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0544116592715977, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_330d3e4d68b655cf7939b03ac6322c7b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0c5b22bb37fbe8f5b6d153ef692d5326 = $(`<div id="html_0c5b22bb37fbe8f5b6d153ef692d5326" style="width: 100.0%; height: 100.0%;">Thành phố Vị Thanh: $10,032,914,629 (0.17% of Total Revenue)</div>`)[0];
+                popup_330d3e4d68b655cf7939b03ac6322c7b.setContent(html_0c5b22bb37fbe8f5b6d153ef692d5326);
+            
+        
+
+        circle_marker_8c35b7d2dbf221421965bf6e58cc042d.bindPopup(popup_330d3e4d68b655cf7939b03ac6322c7b)
+        ;
+
+        
+    
+    
+            var circle_marker_5edbf98dfa97142ecf7ff12cc438cfd8 = L.circleMarker(
+                [21.7296, 104.8626],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.026174554852133, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_954aff7b1f0b28b969a495446251eb17 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d64341c5a4e8746e3560a63195a2cfd = $(`<div id="html_2d64341c5a4e8746e3560a63195a2cfd" style="width: 100.0%; height: 100.0%;">Thành phố Yên Bái: $4,826,301,528 (0.08% of Total Revenue)</div>`)[0];
+                popup_954aff7b1f0b28b969a495446251eb17.setContent(html_2d64341c5a4e8746e3560a63195a2cfd);
+            
+        
+
+        circle_marker_5edbf98dfa97142ecf7ff12cc438cfd8.bindPopup(popup_954aff7b1f0b28b969a495446251eb17)
+        ;
+
+        
+    
+    
+            var circle_marker_332a427966b409055ea5f79471869f0f = L.circleMarker(
+                [11.9426, 108.4583],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2518530945220374, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_118256bec5c3df3396940544af2e4c3d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9fb770c7595ab004bcaf6580d692796 = $(`<div id="html_b9fb770c7595ab004bcaf6580d692796" style="width: 100.0%; height: 100.0%;">Thành phố Đà Lạt: $46,438,955,000 (0.79% of Total Revenue)</div>`)[0];
+                popup_118256bec5c3df3396940544af2e4c3d.setContent(html_b9fb770c7595ab004bcaf6580d692796);
+            
+        
+
+        circle_marker_332a427966b409055ea5f79471869f0f.bindPopup(popup_118256bec5c3df3396940544af2e4c3d)
+        ;
+
+        
+    
+    
+            var circle_marker_a26ae6ba526d1c9d61d57bb0a6f3fdd0 = L.circleMarker(
+                [16.7967, 106.6731],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.043755389077989, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_abc5dedb7dbc26166080fc262578012a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_84addde14ca0091ccc7589772badb06f = $(`<div id="html_84addde14ca0091ccc7589772badb06f" style="width: 100.0%; height: 100.0%;">Thành phố Đông Hà: $8,068,015,000 (0.14% of Total Revenue)</div>`)[0];
+                popup_abc5dedb7dbc26166080fc262578012a.setContent(html_84addde14ca0091ccc7589772badb06f);
+            
+        
+
+        circle_marker_a26ae6ba526d1c9d61d57bb0a6f3fdd0.bindPopup(popup_abc5dedb7dbc26166080fc262578012a)
+        ;
+
+        
+    
+    
+            var circle_marker_8aa1bd3d9afa0168011db9fb10b914a6 = L.circleMarker(
+                [20.4548, 106.327],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1139709110809357, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_50a8563f71455a6c03d658a8fe8f6fc2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_17eea5626ede5ef22a45f77ea068ece5 = $(`<div id="html_17eea5626ede5ef22a45f77ea068ece5" style="width: 100.0%; height: 100.0%;">Thái Bình: $21,014,989,000 (0.36% of Total Revenue)</div>`)[0];
+                popup_50a8563f71455a6c03d658a8fe8f6fc2.setContent(html_17eea5626ede5ef22a45f77ea068ece5);
+            
+        
+
+        circle_marker_8aa1bd3d9afa0168011db9fb10b914a6.bindPopup(popup_50a8563f71455a6c03d658a8fe8f6fc2)
+        ;
+
+        
+    
+    
+            var circle_marker_487ee6e2af1b120f4c077aac77f045b5 = L.circleMarker(
+                [21.5972, 105.843],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.001486584953073, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_97319f46b24a9ef5064f27274cc37024 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8a4b7cc3adf46058ccd5a5eb9a02867d = $(`<div id="html_8a4b7cc3adf46058ccd5a5eb9a02867d" style="width: 100.0%; height: 100.0%;">Thái Nguyên: $274,110,000 (0.00% of Total Revenue)</div>`)[0];
+                popup_97319f46b24a9ef5064f27274cc37024.setContent(html_8a4b7cc3adf46058ccd5a5eb9a02867d);
+            
+        
+
+        circle_marker_487ee6e2af1b120f4c077aac77f045b5.bindPopup(popup_97319f46b24a9ef5064f27274cc37024)
+        ;
+
+        
+    
+    
+            var circle_marker_56601870efd91a80c19e6bb7009e3cb2 = L.circleMarker(
+                [21.8152, 105.2174],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.0354217709565385, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_e8967dda6743bd4e48b00fa98d350297 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_96fa5abdb79086f660eb3b742e14d21c = $(`<div id="html_96fa5abdb79086f660eb3b742e14d21c" style="width: 100.0%; height: 100.0%;">Tuyên Quang: $6,531,387,000 (0.11% of Total Revenue)</div>`)[0];
+                popup_e8967dda6743bd4e48b00fa98d350297.setContent(html_96fa5abdb79086f660eb3b742e14d21c);
+            
+        
+
+        circle_marker_56601870efd91a80c19e6bb7009e3cb2.bindPopup(popup_e8967dda6743bd4e48b00fa98d350297)
+        ;
+
+        
+    
+    
+            var circle_marker_5e3f66fe17bcae07dd77b9f44743672b = L.circleMarker(
+                [11.317, 106.093],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.234528590429669, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_0d922b80e14d2f48936c81fda8a6ac97 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_003414cbf1945c3b8b0419d829fee589 = $(`<div id="html_003414cbf1945c3b8b0419d829fee589" style="width: 100.0%; height: 100.0%;">Tây Ninh: $43,244,506,000 (0.73% of Total Revenue)</div>`)[0];
+                popup_0d922b80e14d2f48936c81fda8a6ac97.setContent(html_003414cbf1945c3b8b0419d829fee589);
+            
+        
+
+        circle_marker_5e3f66fe17bcae07dd77b9f44743672b.bindPopup(popup_0d922b80e14d2f48936c81fda8a6ac97)
+        ;
+
+        
+    
+    
+            var circle_marker_a95aa8b2a988fe403613d06120142198 = L.circleMarker(
+                [10.348, 107.0835],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4631085656571536, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_ba691f47a1fa76a3da3ae63034fb14bd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2ac6b3bed13be286b28411fe162444de = $(`<div id="html_2ac6b3bed13be286b28411fe162444de" style="width: 100.0%; height: 100.0%;">Vũng Tàu: $85,392,152,443 (1.45% of Total Revenue)</div>`)[0];
+                popup_ba691f47a1fa76a3da3ae63034fb14bd.setContent(html_2ac6b3bed13be286b28411fe162444de);
+            
+        
+
+        circle_marker_a95aa8b2a988fe403613d06120142198.bindPopup(popup_ba691f47a1fa76a3da3ae63034fb14bd)
+        ;
+
+        
+    
+    
+            var circle_marker_3ef864f0927604c50a29f3179cdcb263 = L.circleMarker(
+                [10.2456, 106.3731],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1768400183323036, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_e057ccaca8599b014e1752a27d24e638 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_594c389df6c4c394e0069f9bf0803c0d = $(`<div id="html_594c389df6c4c394e0069f9bf0803c0d" style="width: 100.0%; height: 100.0%;">thành phố Bến Tre: $32,607,364,500 (0.55% of Total Revenue)</div>`)[0];
+                popup_e057ccaca8599b014e1752a27d24e638.setContent(html_594c389df6c4c394e0069f9bf0803c0d);
+            
+        
+
+        circle_marker_3ef864f0927604c50a29f3179cdcb263.bindPopup(popup_e057ccaca8599b014e1752a27d24e638)
+        ;
+
+        
+    
+    
+            var circle_marker_5d78e3211c07aba559d583701f93fb0d = L.circleMarker(
+                [16.054, 108.2022],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.290835759506557, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_85d9f483c231145bcdbc9df9327330e5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_25ea545aa76f05d768c572678dd83bbf = $(`<div id="html_25ea545aa76f05d768c572678dd83bbf" style="width: 100.0%; height: 100.0%;">Đà Nẵng: $238,015,990,480 (4.03% of Total Revenue)</div>`)[0];
+                popup_85d9f483c231145bcdbc9df9327330e5.setContent(html_25ea545aa76f05d768c572678dd83bbf);
+            
+        
+
+        circle_marker_5d78e3211c07aba559d583701f93fb0d.bindPopup(popup_85d9f483c231145bcdbc9df9327330e5)
+        ;
+
+        
+    
+    
+            var circle_marker_6d26872d6440817c8b5102c4cbc15bc4 = L.circleMarker(
+                [17.4657, 106.5933],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.101039737082162, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_169b1561e4b2e5e8768d646799d239f5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1b096dd03a5c96f92f20ce7314b76eb5 = $(`<div id="html_1b096dd03a5c96f92f20ce7314b76eb5" style="width: 100.0%; height: 100.0%;">Đồng Hới: $18,630,622,000 (0.32% of Total Revenue)</div>`)[0];
+                popup_169b1561e4b2e5e8768d646799d239f5.setContent(html_1b096dd03a5c96f92f20ce7314b76eb5);
+            
+        
+
+        circle_marker_6d26872d6440817c8b5102c4cbc15bc4.bindPopup(popup_169b1561e4b2e5e8768d646799d239f5)
+        ;
+
+        
+    
+    
+            var circle_marker_ba0236d0048b9b4f0776be1873c2f1ef = L.circleMarker(
+                [10.9248, 106.8685],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.378363111869769, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_0d883d41e9057c10bdc1fced766565e1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_27f1791342da2d04263f6c5af20d5a82 = $(`<div id="html_27f1791342da2d04263f6c5af20d5a82" style="width: 100.0%; height: 100.0%;">Đồng Nai: $69,766,018,000 (1.18% of Total Revenue)</div>`)[0];
+                popup_0d883d41e9057c10bdc1fced766565e1.setContent(html_27f1791342da2d04263f6c5af20d5a82);
+            
+        
+
+        circle_marker_ba0236d0048b9b4f0776be1873c2f1ef.bindPopup(popup_0d883d41e9057c10bdc1fced766565e1)
+        ;
+
+        
+    
+    
+            var circle_marker_783b18fc0dfe523eebedcf7165187551 = L.circleMarker(
+                [11.1934, 106.6577],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.048579346675246, "stroke": true, "weight": 3}
+            ).addTo(map_b6fb5fd73f9d114fc1ec2231635ee34e);
+        
+    
+        var popup_4ef63dbf0e62d03f07a86b165e3240d1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3c69c67dfa311a5c7cf6e74bd638aef9 = $(`<div id="html_3c69c67dfa311a5c7cf6e74bd638aef9" style="width: 100.0%; height: 100.0%;">Đồng Xoài: $8,957,500,000 (0.15% of Total Revenue)</div>`)[0];
+                popup_4ef63dbf0e62d03f07a86b165e3240d1.setContent(html_3c69c67dfa311a5c7cf6e74bd638aef9);
+            
+        
+
+        circle_marker_783b18fc0dfe523eebedcf7165187551.bindPopup(popup_4ef63dbf0e62d03f07a86b165e3240d1)
+        ;
+
+        
+    
+</script>
+</html>
