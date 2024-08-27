@@ -161,63 +161,6 @@ def analyze_profitable_movies(df_long, threshold=45e9):
         'Total Revenue (Billion VND)': '{:.2f}'
     }).applymap(color_change, subset=['Change (%)']))
 
-def analyze_movie_run_length(df_long, revenue_threshold_failed=10e9, revenue_threshold_successful=45e9):
-    # Agrupar por película y calcular el ingreso total
-    movie_total_revenue = df_long.groupby('Movie Name')['Revenue'].sum()
-
-    # Clasificar películas
-    failed_movies = movie_total_revenue[movie_total_revenue < revenue_threshold_failed].index
-    breakeven_movies = movie_total_revenue[(movie_total_revenue >= revenue_threshold_failed) & (movie_total_revenue < revenue_threshold_successful)].index
-    successful_movies = movie_total_revenue[movie_total_revenue >= revenue_threshold_successful].index
-
-    def calculate_run_length(movies):
-        run_lengths = []
-        revenue_progressions = []
-        for movie in movies:
-            movie_data = df_long[df_long['Movie Name'] == movie].sort_values('Date')
-            release_date = movie_data['Release Date'].iloc[0]
-            last_revenue_date = movie_data[movie_data['Revenue'] > 0]['Date'].max()
-            run_length = (last_revenue_date - release_date).days + 1
-            run_lengths.append(run_length)
-
-            # Calcular la progresión de ingresos
-            movie_data['Days Since Release'] = (movie_data['Date'] - release_date).dt.days
-            cumulative_revenue = movie_data.set_index('Days Since Release')['Revenue'].cumsum()
-            normalized_revenue = cumulative_revenue / cumulative_revenue.max()
-            revenue_progressions.append(normalized_revenue)
-
-        return run_lengths, revenue_progressions
-
-    failed_run_lengths, failed_progressions = calculate_run_length(failed_movies)
-    breakeven_run_lengths, breakeven_progressions = calculate_run_length(breakeven_movies)
-    successful_run_lengths, successful_progressions = calculate_run_length(successful_movies)
-
-    # Visualizar resultados
-    st.write("## Movie Run Length Analysis")
-    
-    st.write("### Average Run Lengths")
-    st.write(f"Failed Movies: {np.mean(failed_run_lengths):.1f} days")
-    st.write(f"Break-even Movies: {np.mean(breakeven_run_lengths):.1f} days")
-    st.write(f"Successful Movies: {np.mean(successful_run_lengths):.1f} days")
-
-    # Graficar distribución de duración de exhibición
-    fig, ax = plt.subplots(figsize=(10, 6))
-    sns.boxplot(data=[failed_run_lengths, breakeven_run_lengths, successful_run_lengths], ax=ax)
-    ax.set_xticklabels(['Failed', 'Break-even', 'Successful'])
-    ax.set_ylabel('Run Length (days)')
-    ax.set_title('Distribution of Movie Run Lengths')
-    st.pyplot(fig)
-
-    # Graficar progresión de ingresos promedio
-    fig, ax = plt.subplots(figsize=(10, 6))
-    plot_average_progression(failed_progressions, 'Failed', ax)
-    plot_average_progression(breakeven_progressions, 'Break-even', ax)
-    plot_average_progression(successful_progressions, 'Successful', ax)
-    ax.set_xlabel('Days since release')
-    ax.set_ylabel('Normalized Cumulative Revenue')
-    ax.set_title('Average Revenue Progression')
-    ax.legend()
-    st.pyplot(fig)
 
 def plot_average_progression(progressions, label, ax):
     max_length = max(len(p) for p in progressions)
@@ -340,9 +283,5 @@ def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
     # Analizar películas rentables
     st.write("**Profitable Movies Analysis**")
     analyze_profitable_movies(df_long)
-
-    # Añadir esta línea en la función principal (insight2) para llamar a la nueva función
-    analyze_movie_run_length(df_long)
-
 if __name__ == "__main__":
     insight2()
