@@ -36,9 +36,20 @@ def is_key_date(date, key_dates, margin_days):
 def load_and_process_revenue_data(file_path):
     df = pd.read_excel(file_path, engine='openpyxl')
     df['Ca chiếu'] = pd.to_datetime(df['Ca chiếu'], format='%H:%M:%S').dt.time
-    df['Minutes'] = [t.hour * 60 + t.minute for t in df['Ca chiếu']]
+    df['Hour'] = pd.to_datetime(df['Ca chiếu'], format='%H:%M:%S').dt.hour
     df['Revenue (Billions VND)'] = df['Doanh thu'] / 1_000_000_000
     return df
+
+    
+# Function to load and process revenue data from insight2.xlsx
+def load_revenue_from_insight2(file_path):
+    # Load the Excel file
+    revenue_df = pd.read_excel(file_path, engine='openpyxl')
+
+    # Calculate total revenue for each movie by summing the values across date columns
+    revenue_df['Total Revenue (Billions VND)'] = revenue_df.iloc[:, 1:].sum(axis=1) / 1_000_000_000
+    
+    return revenue_df[['Movie Name', 'Total Revenue (Billions VND)']]
 
 # Main function to generate the Streamlit app
 def insight5():
@@ -49,73 +60,95 @@ def insight5():
     # Load key dates from the Excel file
     key_dates = load_key_dates_from_excel()
 
+    # Load revenue data from insight2.xlsx
+    revenue_file_path = 'insight2.xlsx'
+    revenue_df = load_revenue_from_insight2(revenue_file_path)
+
+    # Merge the revenue data with the main df
+    df = df.merge(revenue_df, left_on='Movie Name', right_on='Movie Name', how='left')
+
     # Margin days setting
     st.title('Movie Release Insights')
 
-    # Place the margin days slider and "Exclude Other" checkbox at the top
-    margin_days = st.slider('Select margin days for key dates', min_value=0, max_value=10, value=3)
-    exclude_other = st.checkbox('Exclude "Other" from Key Date Event chart')
+    # Filter by year
+    st.header('Filter by Year')
+    years = ["All Years"] + sorted(df['Release Date'].dt.year.unique().tolist())
+    selected_year = st.selectbox("Select Year", options=years, key="year_filter")
 
-    # Add a column to the DataFrame with the key event using the defined margin
+    if selected_year != "All Years":
+        df = df[df['Release Date'].dt.year == int(selected_year)]
+
+    margin_days = st.slider('Select margin days for key dates', min_value=0, max_value=10, value=3, key="margin_days_slider")
+    exclude_other = st.checkbox('Exclude "Other" from Key Date Event chart', key="exclude_other_checkbox")
+
     df['Key Date Event'] = df['Release Date'].apply(lambda x: is_key_date(x, key_dates, margin_days))
     df['Month'] = df['Release Date'].dt.month
-    df['Day of Week'] = df['Release Date'].dt.day_name()
 
     # Section 1: Optimal Release Periods
     st.header('Optimal Release Periods')
     st.write(f"We also consider a margin of ±{margin_days} days around key dates to account for movies "
              f"released in close proximity to these events.")
 
-    # Count movies by key event (including ±n days margin)
     event_counts = df['Key Date Event'].value_counts()
-
-    # Exclude "Other" if selected
     if exclude_other:
         event_counts = event_counts[event_counts.index != 'Other']
-
     st.bar_chart(event_counts)
 
     # Section 2: Releases by Month
     st.header('Releases by Month')
+
+    # Count movies by month
     month_counts = df['Month'].value_counts().sort_index()
-    st.bar_chart(month_counts)
 
-    # Section 3: Releases by Day of the Week
-    st.header('Releases by Day of the Week')
-    weekday_counts = df['Day of Week'].value_counts().reindex(
-        ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-    )
-    st.bar_chart(weekday_counts)
+    # Count movies by month with revenue > 50 billion VND
+    high_revenue_df = df[df['Total Revenue (Billions VND)'] > 50]
+    high_revenue_month_counts = high_revenue_df['Month'].value_counts().sort_index()
 
-    # Section 4: Revenue Analysis by Time
+    # Plotting
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    # Plot total releases
+    ax.bar(month_counts.index, month_counts.values, color='blue', label='Total Releases')
+
+    # Overlay movies with revenue > 50 billion VND
+    ax.bar(high_revenue_month_counts.index, high_revenue_month_counts.values, color='orange', label='Releases with Revenue > 50B VND')
+
+    ax.set_xlabel('Month')
+    ax.set_ylabel('Number of Releases')
+    ax.set_title('Releases by Month with High Revenue Highlight')
+    ax.legend()
+
+    st.pyplot(fig)
+
+    # Section 3: Revenue Analysis by Time
     st.header('Revenue Analysis by Time')
 
-    # Fixed file path for revenue data
-    revenue_file_path = 'revenue_by_time.xlsx'
+    # Load and process revenue data from the original revenue file
+    revenue_time_file_path = 'revenue_by_time.xlsx'
+    revenue_time_df = load_and_process_revenue_data(revenue_time_file_path)
 
-    # Load and process revenue data
-    revenue_df = load_and_process_revenue_data(revenue_file_path)
-
-    # Display total revenue
-    total_revenue = revenue_df['Revenue (Billions VND)'].sum()
+    total_revenue = revenue_time_df['Revenue (Billions VND)'].sum()
     st.write(f"Total Revenue: {total_revenue:.2f} billion VND")
 
-    # Plot revenue over time
+    revenue_by_hour = revenue_time_df.groupby('Hour')['Revenue (Billions VND)'].sum()
+
     fig, ax = plt.subplots(figsize=(12, 6))
-    ax.plot(revenue_df['Minutes'], revenue_df['Revenue (Billions VND)'], marker='o', linestyle='-')
+    ax.plot(revenue_by_hour.index, revenue_by_hour.values, marker='o', linestyle='-')
 
-    # Configure x-axis ticks
-    ticks = range(0, 1440, 60)  # Every 60 minutes
-    labels = [f'{h:02d}:{m:02d}' for h in range(24) for m in [0, 30] if h * 60 + m in ticks]
-    ax.set_xticks(ticks)
-    ax.set_xticklabels(labels, rotation=45)
+    x_ticks = [0, 10, 13] + list(range(13, 24))
+    ax.set_xticks(x_ticks)
 
-    ax.set_xlabel('Minutes Since Midnight')
+    ax.set_xlabel('Hour of the Day')
     ax.set_ylabel('Revenue (Billions VND)')
     ax.set_title('Revenue by Hour of the Day')
     ax.grid(True)
 
     st.pyplot(fig)
+
+    st.header('Revenue Breakdown by Hour')
+    revenue_table = revenue_by_hour.reset_index()
+    revenue_table.columns = ['Hour of the Day', 'Revenue (Billions VND)']
+    st.table(revenue_table)
 
 # Call the main function
 if __name__ == "__main__":
