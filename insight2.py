@@ -279,9 +279,40 @@ def insight2(file_path='insight2.xlsx', release_dates_path='release_dates.csv'):
     st.write(f"Total revenue in the second weekend after release: {second_weekend / 1e9:,.2f} billion VND")
     st.markdown(f"Change in revenue during the second weekend: {format_percentage_change(((second_weekend - first_weekend) / first_weekend * 100) if first_weekend > 0 else None)}", unsafe_allow_html=True)
 
-
     # Analizar películas rentables
     st.write("**Profitable Movies Analysis**")
     analyze_profitable_movies(df_long)
+
+    # Nueva tabla al final
+    # Cargar datos adicionales
+    df_additional = pd.read_excel(file_path)
+    
+    # Extraer y convertir columnas
+    date_columns = df_additional.columns[1:]
+    df_additional.columns = [df_additional.columns[0]] + [pd.to_datetime(col) for col in date_columns]
+
+    # Calcular el ingreso total
+    df_additional['Total Revenue (Billions VND)'] = df_additional.iloc[:, 1:].replace(0, pd.NA).sum(axis=1) / 1e9
+
+    # Función para calcular días entre el primer y último valor no cero
+    def calculate_days_between(row):
+        non_zero_dates = [date for date, value in zip(df_additional.columns[1:], row[1:]) if value > 0]
+        if non_zero_dates:
+            return (non_zero_dates[-1] - non_zero_dates[0]).days
+        return 0
+
+    # Añadir columna de Días Entre
+    df_additional['Days Between'] = df_additional.iloc[:, 1:-2].apply(calculate_days_between, axis=1)
+
+    # Filtrar datos
+    filtered_df = df_additional[
+        (df_additional['Total Revenue (Billions VND)'] > 50) & 
+        (df_additional['Days Between'] <= 90)
+    ]
+
+    # Mostrar la nueva tabla en Streamlit
+    st.write("**Typical run for a succesful movie**   (>50 Billions Revenue & < 90 days between first and last projection)")
+    st.dataframe(filtered_df[['Movie Name', 'Total Revenue (Billions VND)', 'Days Between']])
+
 if __name__ == "__main__":
     insight2()
