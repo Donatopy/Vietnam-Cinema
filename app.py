@@ -5,6 +5,7 @@ from insight3 import insight3
 from insight4 import insight4
 from insight5 import insight5
 from insight6 import insight6
+from insight7 import insight7
 import pandas as pd
 
 def main():
@@ -17,7 +18,7 @@ def main():
     release_dates['Year'] = release_dates['Release Date'].dt.year
 
     # Configure tabs
-    tab1, tab2, tab3, tab4, tab5, tab6= st.tabs(["Insight 1", "Insight 2", "Insight 3", "Insight 4", "Insight 5", "Insight 6"])
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7= st.tabs(["Insight 1", "Insight 2", "Insight 3", "Insight 4", "Insight 5", "Insight 6", "Insight 7"])
 
     with tab1:
         st.header("Insight 1")
@@ -43,6 +44,10 @@ def main():
     with tab6:
         st.header("Insight 6")
         insight6()
+
+    with tab7:
+        st.header("Insight 7")
+        insight7()
 
 if __name__ == "__main__":
     main()
