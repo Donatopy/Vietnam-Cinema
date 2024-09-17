@@ -69,7 +69,7 @@ def plot_gaussian_distribution(screenings):
 
 # Function to analyze percentage drop for all movies
 def analyze_percentage_drop(data):
-    st.write("**Top Films by Screening Drop**")
+    st.write("**Top Films by Screening Change**")
     
     sorted_data = data.sort_values(by='Percentage Drop', ascending=True)
     display_data = sorted_data[['Film', 'Total First Weekend', 'Total Second Weekend', 'Percentage Drop']]
