@@ -47,25 +47,6 @@ def plot_screenings_for_movie(data, selected_movie):
     
     st.write(f"This graph shows the number of screenings allocated for each day of the first and second weekends of '{selected_movie}'. The bars represent the number of screenings on Friday, Saturday, and Sunday during the opening weekend and the second weekend. This helps to understand how the distribution of screenings changes over these two key periods.")
 
-# Function to analyze daily variation during the first weekend
-def analyze_daily_variation(data, selected_movie):
-    st.subheader(f"Daily Variation Analysis During the First Weekend for '{selected_movie}'")
-    
-    movie_data = data[data['Film'] == selected_movie]
-    daily_screenings = movie_data[['Friday Screenings', 'Saturday Screenings', 'Sunday Screenings']].values.flatten()
-    
-    fig, ax = plt.subplots(figsize=(10, 6))
-    sns.histplot(daily_screenings, kde=True)
-    ax.set_title(f'Distribution of Daily Screenings During the First Weekend of {selected_movie}')
-    ax.set_xlabel('Number of Screenings')
-    ax.set_ylabel('Frequency')
-    
-    st.pyplot(fig)
-    
-    st.write(f"This histogram shows the distribution of daily screenings for '{selected_movie}' during the first weekend. The Kernel Density Estimate (KDE) line helps visualize the distribution of the number of screenings per day. This analysis helps understand if there are significant fluctuations in the number of screenings on different days during the opening weekend.")
-    
-    return daily_screenings
-
 # Function to plot Gaussian distribution of daily screenings
 def plot_gaussian_distribution(screenings):
     st.subheader("Gaussian Distribution of Daily Screenings")
@@ -114,7 +95,7 @@ def analyze_percentage_drop(data):
 # Function to plot Gaussian distribution of average daily screenings over the opening weekend for all movies (in %)
 def plot_gaussian_average_screenings_percentage(data):
     st.subheader("Gaussian Distribution of Average Daily Screenings Over Opening Weekend for All Movies (in %)")
-    
+
     # Calculate the average daily screenings for the first weekend (Friday, Saturday, Sunday)
     data['Average Daily Screenings'] = data[['Friday Screenings', 'Saturday Screenings', 'Sunday Screenings']].mean(axis=1)
     
@@ -160,14 +141,7 @@ def insight7():
 
     # Display plots for the selected movie
     plot_screenings_for_movie(data, selected_movie)
-    screenings = analyze_daily_variation(data, selected_movie)
 
-    # Plot Gaussian distribution if daily variation is low
-    if np.std(screenings) < 100:
-        plot_gaussian_distribution(screenings)
-    else:
-        st.write("The daily variation is significant. Gaussian distribution will not be plotted.")
-    
     # Plot Gaussian distribution of average daily screenings over the opening weekend for all movies (in %)
     plot_gaussian_average_screenings_percentage(data)
 
@@ -176,4 +150,3 @@ def insight7():
 
 if __name__ == '__main__':
     insight7()
-
