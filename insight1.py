@@ -60,7 +60,7 @@ def plot_data_insight1(df, release_dates):
     # Valores de las líneas según el año seleccionado
     if year_filter == 2019 or year_filter == "All Years":
         line_value = 18
-        year_display = 2019  # Mostrar 2019 si es "All Years"
+        year_display = 2019
     elif year_filter == 2020:
         line_value = 18.9
         year_display = 2020
@@ -76,8 +76,11 @@ def plot_data_insight1(df, release_dates):
     elif year_filter == 2024:
         line_value = 22.97
         year_display = 2024
+    elif year_filter == 2025:
+        line_value = 24.13
+        year_display = 2025
     else:
-        line_value = 18  # Valor por defecto si no se selecciona un año específico
+        line_value = 18
         year_display = 2019
 
     # Añadir líneas ajustadas
@@ -114,9 +117,9 @@ def plot_data_insight1(df, release_dates):
 
     # Create the budget and revenue needed table
     budget_data = {
-        'Year': [2019, 2020, 2021, 2022, 2023, 2024],
-        'Budget (Billion VND)': [f"{18.00:.2f}", f"{18.90:.2f}", f"{19.85:.2f}", f"{20.84:.2f}", f"{21.88:.2f}", f"{22.97:.2f}"],
-        'Estimated Break-Even Point (Billion VND)': [f"{45.00:.2f}", f"{47.25:.2f}", f"{49.63:.2f}", f"{52.10:.2f}", f"{54.70:.2f}", f"{57.43:.2f}"]
+        'Year': [2019, 2020, 2021, 2022, 2023, 2024, 2025],
+        'Budget (Billion VND)': [f"{18.00:.2f}", f"{18.90:.2f}", f"{19.85:.2f}", f"{20.84:.2f}", f"{21.88:.2f}", f"{22.97:.2f}", f"{24.13:.2f}"],
+        'Estimated Break-Even Point (Billion VND)': [f"{45.00:.2f}", f"{47.25:.2f}", f"{49.63:.2f}", f"{52.10:.2f}", f"{54.70:.2f}", f"{57.43:.2f}", f"{60.33:.2f}"]
     }
     budget_df = pd.DataFrame(budget_data)
     st.table(budget_df)
@@ -138,16 +141,13 @@ def plot_data_insight1(df, release_dates):
     # Verificar el rango de ingresos
     if not df_scatter.empty:
         max_revenue = df_scatter['Revenue (Billion VND)'].max()
-        bins = [0, 20, 50, 100, max_revenue + 1]  # Aseguramos que el último bin sea mayor que max_revenue
+        bins = [0, 20, 50, 100, max_revenue + 1]
         labels = ["0-20 Billion", "20-50 Billion", "50-100 Billion", "100+ Billion"]
         
-        # Verificar que los bins estén en orden ascendente
         bins = sorted(set(bins))
         
-        # Asignar los rangos
         df_scatter['Revenue Range'] = pd.cut(df_scatter['Revenue (Billion VND)'], bins=bins, labels=labels, include_lowest=True)
         
-        # Contar el número de películas en cada rango de ingresos
         revenue_counts = df_scatter['Revenue Range'].value_counts().sort_index()
 
         fig2, ax2 = plt.subplots(figsize=(10, 6))
